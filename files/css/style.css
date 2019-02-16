@@ -782,7 +782,7 @@ form .col-md-12 textarea {
   /*padding: 60px 60px 0 60px;*/
 }
 .samples {
-  padding: 10px 60px 60px 60px;
+  /*padding: 10px 60px 60px 60px;*/
   background: #3b3b3b;
 }
 .description-center, .samples-center {
@@ -797,21 +797,27 @@ form .col-md-12 textarea {
   font-family: 'Roboto', sans-serif;
 }
 .samples-center {
-  background: #3b3b3b;
+  background: #13001f;
 }
 .description-center h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   margin-bottom: 30px;
 }
+.text-contain {
+  max-width: 1080px;
+  margin: 0 auto;
+}
 .client-header {
   margin-bottom: 0px !important;
   margin-top: 30px;
 }
 .logo-board {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
   margin-top: 30px;
-  width: 100%;
-  padding: 0 300px 0 300px;
+  margin-bottom: 30px;
 }
 .samples-left {
   width: 50%;
