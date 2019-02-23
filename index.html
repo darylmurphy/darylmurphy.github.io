@@ -48,16 +48,9 @@
 					<li><a id="go-samples" href="#samples">Samples</a></li>
 					<li><a id="go-phoenix" href="#phoenix">Phoenix</a></li>
 					<li><a id="go-savvy" href="#savvy">Savvy</a></li>
-					<li><a id="go-contact" href="#calendar">Calendar</a></li>
 					<li><a id="go-contact" href="#contact">Contact</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
-			<!-- <div class="navbar-right">
-				<a href="tel:0437010404"><img class="contact-icon phone" src="./files/img/icons/phone.svg"></a>
-				<a href="mailto:aaronmaybus@gmail.com"><img class="contact-icon email" src="./files/img/icons/email.svg"></a>
-				<a href="https://www.instagram.com/amaybus/" target="_blank"><img class="contact-icon" src="./files/img/icons/instagram.svg"></a>
-				<a href="https://www.linkedin.com/in/aaron-maybus-706a1811a" target="_blank"><img class="contact-icon" src="./files/img/icons/linkedin.svg"></a>
-			</div> -->
 		</div>
 	</nav>
 	<!-- <div class="fixed_vid_bg">
@@ -79,11 +72,10 @@
 		</div>
 	</div>
 	<!-- Background Image Parallax -->
-<!-- 	<div class="fixed_bg">
-		<div class="bg_cover">
-		</div>
-	</div> -->
 	<div class="description" id="about">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="./files/img/cover_bg.jpg" alt="">
+		</div>
  		<div class="description-center block-spacer">
 	 		<div class="text-contain">
 	 			<h2 class="header-text">Unless you've been marooned on a desert island you would've heard Daryl's voice. Don't miss the opportunity to see this talented performer in action!</h2>
@@ -108,6 +100,9 @@
 		</div>
 	</div>
 	<div class="samples" id="samples">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="./files/img/samples.jpg" alt="">
+		</div>
 		<div class="samples-center block-spacer">
 			<h1>Samples</h1>
 	 		<div class="text-contain">
@@ -137,6 +132,9 @@
 		</div>
 	</div> -->
 	<div class="phoenix" id="phoenix">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="./files/img/phoenix.jpg" alt="">
+		</div>
 		<div class="phoenix-center block-spacer">
 			<h1>Phoenix</h1>
 			<div class="text-contain">
@@ -168,13 +166,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="hidden_div_savvy">
-	</div>
-<!-- 	<div class="fixed_bg3">
-		<div class="bg_cover3">
-		</div>
-	</div> -->
 	<div class="savvy" id="savvy">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="./files/img/savvy.jpg" alt="">
+		</div>
 		<div class="savvy-center block-spacer">
 			<h1>Savvy</h1>
 			<div class="text-contain">
@@ -236,6 +231,46 @@
 			</div>
 		</div>
 	</div>
+	<div class="contact" id="contact">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="./files/img/contact.jpg" alt="">
+		</div>
+		<div class="contact-center block-spacer">
+			<h1>Contact</h1>
+		<div class="text-contain contact-footer">
+			<p>
+				Interested in where Phoenix and Savvy are playing, or to want to check if they're available for your next event? 
+			</p>
+			<p class="calendar-link-margin">
+				<a class="calendar-link" href="https://calendar.yahoo.com/dazvox" target="_blank"><u>Click here.<u/></a>
+			</p> 
+			<div class="col-md-4 animContactFirst">
+				<img class="contact-icon-footer phone" src="./files/img/icons/phone.svg">
+				<p>Phone</p>
+				<hr></hr>
+				<a class="links" href="tel:0402419311"><p>0402 419 311</p></a>
+			</div>
+			<div class="col-md-4 animContactSecond">
+				<img class="contact-icon-footer email" src="./files/img/icons/email.svg">
+				<p>Mail</p>
+				<hr></hr>
+				<a class="links" href="mailto:daz@darylmurphy.com"><p>daz@darylmurphy.com</p></a>
+			</div>
+			<div class="col-md-4 animContactThird">
+				<img class="contact-icon-footer" src="./files/img/icons/instagram.svg">
+				<p>Instagram</p>
+				<hr></hr>
+				<a class="links" href="https://www.instagram.com/dazvox/" target="_blank"><p>@dazvox</p></a>
+			</div>
+			<div class="col-md-12">
+				<p>&copy; Copyright Daryl Murphy 2019 | All Rights Reserved.</p>
+			</div>
+			</div>
+			<div class="background-text-right">
+				<h1>FIND OUT MORE</h1>
+			</div>
+		</div>
+	</div>
 	<!-- 
 	<div class="footer">
 		<div class="col-md-3">
@@ -266,6 +301,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
 	<!-- Jarallax -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.9.0/jarallax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="
@@ -278,25 +314,67 @@
 		    distance: '300%',
 		    origin: 'left',
 		    opacity: 0,
-		    delay: 100
+		    delay: 200,
+		    duration: 500,
+		    reset: true
 		};
 		var slideInRight = {
 		    distance: '300%',
 		    origin: 'right',
 		    opacity: 0,
-		    delay: 100
+		    delay: 200,
+		    duration: 500,
+		    reset: true
+		};
+		var slideInBottomDelayed = {
+		    distance: '300%',
+		    origin: 'bottom',
+		    opacity: 0,
+		    delay: 300,
+		    duration: 500,
+		    reset: true
 		};
 		var slideInBottom = {
 		    distance: '300%',
 		    origin: 'bottom',
 		    opacity: 0,
-		    delay: 100
+		    delay: 200,
+		    duration: 500,
+		    reset: true
+		};
+		var slideInBottomContactOne = {
+		    distance: '300%',
+		    origin: 'bottom',
+		    opacity: 0,
+		    delay: 200,
+		    duration: 500,
+		    reset: true
+		};
+		var slideInBottomContactTwo = {
+		    distance: '300%',
+		    origin: 'bottom',
+		    opacity: 0,
+		    delay: 400,
+		    duration: 500,
+		    reset: true
+		};
+		var slideInBottomContactThree = {
+		    distance: '300%',
+		    origin: 'bottom',
+		    opacity: 0,
+		    delay: 600,
+		    duration: 500,
+		    reset: true
 		};
 		ScrollReveal().reveal('.samples-left', slideInLeft);
 		ScrollReveal().reveal('.samples-right', slideInRight);
 		ScrollReveal().reveal('.samples-single', slideInBottom);
+		ScrollReveal().reveal('.logo-board', slideInBottomDelayed);
 		ScrollReveal().reveal('.slideInRight', slideInRight);
 		ScrollReveal().reveal('.slideInLeft', slideInLeft);
+		ScrollReveal().reveal('.animContactFirst', slideInBottomContactOne);
+		ScrollReveal().reveal('.animContactSecond', slideInBottomContactTwo);
+		ScrollReveal().reveal('.animContactThird', slideInBottomContactThree);
 	</script>
 </body>
 </html>	
