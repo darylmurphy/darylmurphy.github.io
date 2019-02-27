@@ -142,7 +142,7 @@
   height: 100%;
   position: fixed;
   top: 0; 
-  bottom: 0;
+  left: 0;
   background: #e7e7e7;
   z-index : 1001; 
 }
@@ -154,18 +154,21 @@
   width: 160px;
 }
 .loader-container img.first {
-  -webkit-animation: ld-wander-px-v 2s infinite ease-out;
-  animation: ld-wander-px-v 2s infinite ease-out;
+  visibility: hidden;
+  -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
+  animation: ld-wander-px-v 2s infinite ease-in-out;
 }
 .loader-container img.second {
-  -webkit-animation: ld-wander-px-v 2s infinite ease-out;
-  animation: ld-wander-px-v 2s infinite ease-out;
+  visibility: hidden;
+  -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
+  animation: ld-wander-px-v 2s infinite ease-in-out;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 .loader-container img.third {
-  -webkit-animation: ld-wander-px-v 2s infinite ease-out;
-  animation: ld-wander-px-v 2s infinite ease-out;
+  visibility: hidden;
+  -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
+  animation: ld-wander-px-v 2s infinite ease-in-out;
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
@@ -527,6 +530,21 @@
   background-repeat: no-repeat;
   /*padding: 60px 60px 0 60px;*/
 }
+/*.description .jarallax {
+  z-index: -1;
+}
+.samples .jarallax {
+  z-index: 0;
+}
+.phoenix .jarallax {
+  z-index: 1;
+}
+.savvy .jarallax {
+  z-index: 2;
+}
+.contact .jarallax {
+  z-index: 3;
+}*/
 .description-center, .samples-center,
 .phoenix-center, .savvy-center, .contact-center {
   overflow: hidden;
@@ -538,6 +556,9 @@
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
 }
+/*#contact {
+  overflow: hidden;
+}*/
 .phoenix-center, .savvy-center {
   background: rgba(0,0,0,0.7);
   padding-bottom: 30px;
