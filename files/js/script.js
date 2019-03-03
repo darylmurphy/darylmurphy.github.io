@@ -41,10 +41,23 @@ function initialise() {
     });
     // Check if not on Chrome, and if on Edge/Safari not on mobile
     // If on mobile keep parallax enabled
-    if($(window).width() < 330){
-      $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
+    
+
+    if($(".hidden-content").visible( true )){
+      $(".testimonials .jarallax div").css({"z-index": "rect(0px," + ($(window).width() - 80) + "px, 335vh, 0px)"});
+      $(".testimonial-bg").css({"height": "335vh !important"});
     }
-      $("div:regex(id, .*jarallax-container-.*)").css({"z-index": "unset"});
+    else {
+      $(".testimonials .jarallax div").css({"clip": "rect(0px," + ($(window).width() - 80) + "px, 240vh, 0px)"});
+      $(".testimonials .jarallax div .jarallax-img").css({"height": "240vh !important"});
+    }
+
+    if($(window).width() < 500){
+      $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
+      $(".jarallax-img").css({"height": "240vh !important"});
+      $(".testimonials .jarallax div ").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 340vh, 0)"});
+      $(".testimonials .jarallax div .jarallax-img").css({"height": "360vh !important"});
+    }
 
     $('.jarallax-img').addClass('edge-compatibility');
     if(is_edge_or_ie){
@@ -67,6 +80,12 @@ function initialise() {
 
 $(document).ready(function () {
   initialise();
+  $(".hidden-content").hide();
+  $(".show-hidden").on("click", function () {
+      var txt = $(".hidden-content").is(':visible') ? 'View more' : 'View less';
+      $(".show-hidden u").text(txt);
+      $(this).next('.hidden-content').slideToggle(500);
+  });
 });
 
 $(window).resize(function () {
@@ -75,23 +94,10 @@ $(window).resize(function () {
         speed: 0.2
     });
     if(is_edge_or_ie){
-      $("body").css("display", "none");
-      $("body").css("display", "block");
+      location.reload();
     }
     initialise();
 });
-
-Pace.restart();
-Pace.on("done", function(){
-  $('.loading').fadeOut("slow", function() {
-  });
-    // Only show main text banner after loading complete
-  $('.title-main').css('display', 'block');
-});
-if($(window).width() < 700){
-  // If pace does not work properly on mobile
-  setTimeout(fadeOut, 3000);
-}
 
 function fadeOut() {
   $('.loading').fadeOut("slow", function() {
@@ -103,10 +109,17 @@ var newUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9
 $(".ld-breath").attr("href", newUrl);
 
 $( window ).scroll(function() {
-  if($(window).width() < 330){
-    $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
+  if($(".hidden-content").visible( true )){
+    $(".testimonials .jarallax div").css({"z-index": "rect(0px," + ($(window).width() - 80) + "px, 335vh, 0px)"});
+    $(".testimonials .jarallax div .jarallax-img").css({"height": "335vh !important"});
   }
   else {
-      $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 200vh, 0)"});
+    $(".testimonials .jarallax div").css({"clip": "rect(0px," + ($(window).width() - 80) + "px, 240vh, 0px)"});
+    $(".testimonials .jarallax div .jarallax-img").css({"height": "240vh !important"});
+  }
+  if($(window).width() < 330){
+    $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
+    $(".jarallax-img").css({"height": "240vh !important"});
+    $(".testimonials .jarallax div .jarallax-img").css({"height": "335vh !important"});
   }
 });
