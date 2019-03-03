@@ -44,6 +44,8 @@ function initialise() {
   $('.jarallax').jarallax({
     speed: 0
   });
+
+  $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ($('.contact').height()) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;')
   // console.log(testDivHeight);
   // Make Jarallax div the height of original
   if(is_edge_or_ie){
@@ -58,8 +60,8 @@ function initialise() {
     });
     // $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width() - 233) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden;');
   }
-  else{
-    // $("div:regex(id, .*jarallax-container-.*)").css({"z-index": "-1"});
+  if($(window).width() < 700){
+    $('.jarallax-img').addClass('edge-compatibility');
   }
 }
 
@@ -69,7 +71,12 @@ $(document).ready(function () {
   $(".show-hidden").on("click", function () {
     var txt = $(".hidden-content").is(':visible') ? 'View more' : 'View less';
     $(".show-hidden u").text(txt);
+    // if($(window).width() < 800){
+    //   $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 380 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
+    // }
+    // else {
     $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 680 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
+    // }
     if(is_edge_or_ie){
       $(".hidden-content").is(':visible') ? $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (hiddenContentHeight + 690) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;') : $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;');
     }

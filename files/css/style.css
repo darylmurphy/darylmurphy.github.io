@@ -886,12 +886,12 @@ hr {
   transition: all 0.3s ease;
 }
 .edge-compatibility {
+  transform: translateY(0) translateZ(0) !important;
   /*top: 210px !important;*/
   height: 130vh !important;
+  position: fixed !important;
+  width: 110% !important;
   /*Cut out underflow of image when fixed*/
-}
-.touch *{
-  background-attachment: scroll!important;
 }
 #navbar {
   background-color: transparent;
@@ -1032,7 +1032,9 @@ hr {
   text-align: center;
   height: 37px;
   width: 37px;
-  margin-bottom: 30px;
+  padding-bottom: 60px;
+  background: white;
+  width: 100%;
   z-index: 20;
 }
 .up-arrow {
@@ -1075,7 +1077,11 @@ hr {
     right: 30px;
   }
   .jarallax {
-    height: 50vh;
+    height: 140vh;
+  }
+  .contact .jarallax,
+  .samples .jarallax {
+    height: 100vh;
   }
   .navbar-nav > li > a {
     font-size: 14px;
@@ -1129,7 +1135,7 @@ hr {
     float: left;
   }
   .go-up {
-    margin-top: 20px;
+    padding-top: 20px;
   }
   .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
     margin-right: 21px;
@@ -1154,6 +1160,11 @@ hr {
     width: auto;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  .title-block-spacer, .block-spacer, .block-spacer-savvy {
+-webkit-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
 }
 @media (max-width: 767px) {
@@ -1237,6 +1248,9 @@ hr {
   }
   .loader-container img {
     width: 80px;
+  }
+  .samples-center {
+    padding: 10px 25px 25px 25px;
   }
 }
 @media all and (max-width: 479px) {
@@ -1365,7 +1379,7 @@ hr {
   .description, .samples, .phoenix, .savvy, 
   .contact, .testimonials, .about-savvy {
     border: 20px solid white;
-    margin-top: 50px;
+    margin-top: 36px;
     margin-bottom: -53px;
   }
   .description-center, .samples-center, .phoenix-center, 
