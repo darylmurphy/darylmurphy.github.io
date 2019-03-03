@@ -23,13 +23,11 @@
 	<link href="../files/css/style.css?v=3.2" rel="stylesheet">
 </head>
 <body>
-<!-- 	<div class="loading">
+	<div class="loading">
 	    <div class="loader-container">
-	    	<img src="../files/img/logos/band/savvy.png" class="ld ld-wander first">
-	    	<img src="../files/img/logos/band/phoenix.png" class="ld ld-wander second">
-	    	<img src="../files/img/logos/band/platinum.png" class="ld ld-wander third">
+	    	<img src="../files/img/logos/band/savvy.png" class="ld ld-wander first savvy-loader">
 		</div>
-	</div> -->
+	</div>
 	<div class="hidden-home" id="home">
 	</div>	
 	<nav id="topnav" class="navbar navbar-default">
@@ -45,13 +43,13 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a id="go-home" href="#home">Home</a></li>
+					<li><a href="#home">Home</a></li>
 					<hr></hr>
-					<li><a id="go-about" href="#about">About</a></li>
+					<li><a href="#about">About</a></li>
 					<hr></hr>
-					<li><a id="go-testimonials" href="#testimonials">Testimonials</a></li>
+					<li><a href="#testimonials">Testimonials</a></li>
 					<hr></hr>
-					<li><a id="go-samples" href="#samples">Samples</a></li>
+					<li><a href="#samples">Samples</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -127,7 +125,7 @@
 	 		<div class="text-contain">				
 				<div class="testimonial">
 					<p class="quote slideInLeft">
-						"&nbsp;Great song selection, they had me dancing all night!" 
+						"Great song selection, they had me dancing all night!" 
 					</p>
 					<div class="profile">
 						<div class="profile-img">
@@ -145,7 +143,7 @@
 				</div>
 				<div class="testimonial">
 					<p class="quote slideInRight">
-						"&nbsp;Congrats on an excellent job last night. The band sounded fantastic - the dance floor said it all!" 
+						"Congrats on an excellent job last night. The band sounded fantastic - the dance floor said it all!" 
 					</p>
 					<div class="profile">
 						<div class="profile-img">
@@ -163,7 +161,7 @@
 				</div>
 				<div class="testimonial">
 					<p class="quote slideInLeft">
-						"&nbsp;The ultimate wedding band."
+						"The ultimate wedding band."
 					</p>
 					<div class="profile">
 						<div class="profile-img">
@@ -182,7 +180,7 @@
 				<hr></hr>
 				<div class="testimonial">
 					<p class="quote slideInRight">
-						"&nbsp;The only complaint I have is sore feet from dancing...Savvy were such a great hit!"
+						"The only complaint I have is sore feet from dancing...Savvy were such a great hit!"
 					</p>
 					<div class="profile">
 						<div class="profile-img">
@@ -202,7 +200,7 @@
 				<div class="hidden-content">
 					<div class="testimonial">
 						<p class="quote">
-							"&nbsp;If you've been in Brisbane for the last 5 minutes then you will have heard of Savvy, they're absolutely fantastic! 
+							"If you've been in Brisbane for the last 5 minutes then you will have heard of Savvy, they're absolutely fantastic! 
 						</p>
 						<div class="profile">
 							<div class="profile-img">
@@ -220,7 +218,7 @@
 					</div>
 					<div class="testimonial">
 						<p class="quote">
-							"&nbsp;In true party band style, it was a great way to cap off a great day.  Savvy's energetic performance engaged the crowd in a celebration to end the festival in style."
+							"In true party band style, it was a great way to cap off a great day.  Savvy's energetic performance engaged the crowd in a celebration to end the festival in style."
 						</p>
 						<div class="profile">
 							<div class="profile-img">
@@ -238,7 +236,7 @@
 					</div>
 					<div class="testimonial">
 						<p class="quote">
-							"&nbsp;On behalf of Daniel and Kathleen, and everyone at the wedding on Sunday, we just wanted to say a massive THANK YOU.  You guys were absolutely awesome and perfect for the occasion. We had so many comments throughout the night, so again, thank you for doing your thing the way you know how. It was fantastic!"
+							"On behalf of Daniel and Kathleen, and everyone at the wedding on Sunday, we just wanted to say a massive THANK YOU.  You guys were absolutely awesome and perfect for the occasion. We had so many comments throughout the night, so again, thank you for doing your thing the way you know how. It was fantastic!"
 						</p>
 						<div class="profile">
 							<div class="profile-img">
@@ -260,13 +258,7 @@
 		<div class="invisible-div" id="samples">
 		</div>
 	</div>
-<!-- 	<div class="hidden_div_phoenix">
-	</div>
-	<div class="fixed_bg2">
-		<div class="bg_cover2">
-		</div>
-	</div> -->
-	<div class="samples">
+	<div class="samples no-margin">
 		<div class="jarallax">
 	    	<img class="jarallax-img" src="../files/img/samples-savvy.jpg" alt="">
 		</div>
@@ -298,6 +290,11 @@
 			</div>
 		</div>
 	</div>
+	<a href="#home">
+    	<div class="go-up">
+            <img class="up-arrow" src="../files/img/arrow_up.png">
+	 	</div>
+    </a>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
@@ -381,16 +378,16 @@
 		  $('.loading').fadeOut("slow", function() {
 		  });
 		    // Only show main text banner after loading complete
-		  $('.title-main').css('display', 'block');
+	 		$('.title-savvy').css('display', 'block');
+				setTimeout(function(){
+		  	$('.arrow-down').css('display', 'block');
+			}, 1200);
 		});
 		if($(window).width() < 700){
 		  // If pace does not work properly on mobile
 		  setTimeout(fadeOut, 3000);
 		}
-		$('.title-savvy').css('display', 'block');
-		setTimeout(function(){
-		  $('.arrow-down').css('display', 'block');
-		}, 1200);
+		
 
 	</script>
 </body>

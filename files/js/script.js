@@ -6,6 +6,11 @@ var ua = window.navigator.userAgent;
 var trident = ua.indexOf('Trident/');
 var edge = ua.indexOf('Edge/');
 
+
+var testimonialsHeight = $('.testimonials').height();
+var hiddenContentHeight = $('.hidden-content').height();
+var totalHeight = testimonialsHeight + hiddenContentHeight;
+
 jQuery.expr[':'].regex = function(elem, index, match) {
     var matchParams = match[3].split(','),
         validLabels = /^(data|css):/,
@@ -25,74 +30,58 @@ $('.navbar-nav>li>a').on('click', function(){
 });
 
 function initialise() {
-    // All animations will take exactly 1000ms
-    var scroll = new SmoothScroll('a[href*="#"]', {
-      speed: 1000,
-      speedAsDuration: true
+  // All animations will take exactly 1000ms
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true
+  });
+  if (trident > 0 || edge > 0) {
+    is_edge_or_ie = true;
+  }
+  if ((is_chrome)&&(is_safari)) {
+    is_safari=false;
+  }
+  $('.jarallax').jarallax({
+    speed: 0
+  });
+  // console.log(testDivHeight);
+  // Make Jarallax div the height of original
+  if(is_edge_or_ie){
+    $('body').on("mousewheel", function () {
+      // remove default behavior
+      event.preventDefault(); 
+
+      //scroll without smoothing
+      var wheelDelta = event.wheelDelta;
+      var currentScrollPosition = window.pageYOffset;
+      window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
-    if (trident > 0 || edge > 0) {
-      is_edge_or_ie = true;
-    }
-    if ((is_chrome)&&(is_safari)) {
-      is_safari=false;
-    }
-    $('.jarallax').jarallax({
-      speed: 0.2
-    });
-    // Check if not on Chrome, and if on Edge/Safari not on mobile
-    // If on mobile keep parallax enabled
-    
-
-    if($(".hidden-content").visible( true )){
-      $(".testimonials .jarallax div").css({"z-index": "rect(0px," + ($(window).width() - 80) + "px, 335vh, 0px)"});
-      $(".testimonial-bg").css({"height": "335vh !important"});
-    }
-    else {
-      $(".testimonials .jarallax div").css({"clip": "rect(0px," + ($(window).width() - 80) + "px, 240vh, 0px)"});
-      $(".testimonials .jarallax div .jarallax-img").css({"height": "240vh !important"});
-    }
-
-    if($(window).width() < 500){
-      $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
-      $(".jarallax-img").css({"height": "240vh !important"});
-      $(".testimonials .jarallax div ").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 340vh, 0)"});
-      $(".testimonials .jarallax div .jarallax-img").css({"height": "360vh !important"});
-    }
-
-    $('.jarallax-img').addClass('edge-compatibility');
-    if(is_edge_or_ie){
-      $('body').on("mousewheel", function () {
-            // remove default behavior
-            event.preventDefault(); 
-
-            //scroll without smoothing
-            var wheelDelta = event.wheelDelta;
-            var currentScrollPosition = window.pageYOffset;
-            window.scrollTo(0, currentScrollPosition - wheelDelta);
-        });
-    }
-    else{
-      // $("div:regex(id, .*jarallax-container-.*)").css({"z-index": "-1"});
-    }
-
-
+    // $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width() - 233) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden;');
+  }
+  else{
+    // $("div:regex(id, .*jarallax-container-.*)").css({"z-index": "-1"});
+  }
 }
 
 $(document).ready(function () {
   initialise();
   $(".hidden-content").hide();
   $(".show-hidden").on("click", function () {
-      var txt = $(".hidden-content").is(':visible') ? 'View more' : 'View less';
-      $(".show-hidden u").text(txt);
-      $(this).next('.hidden-content').slideToggle(500);
+    var txt = $(".hidden-content").is(':visible') ? 'View more' : 'View less';
+    $(".show-hidden u").text(txt);
+    $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 680 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
+    if(is_edge_or_ie){
+      $(".hidden-content").is(':visible') ? $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (hiddenContentHeight + 690) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;') : $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;');
+    }
+    $(this).next('.hidden-content').slideToggle(500);
   });
 });
 
 $(window).resize(function () {
     $('.jarallax').jarallax('destroy');
     $('.jarallax').jarallax({
-        speed: 0.2
-    });
+        speed: 0
+    });    ;
     if(is_edge_or_ie){
       location.reload();
     }
@@ -108,18 +97,3 @@ var newUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9
 
 $(".ld-breath").attr("href", newUrl);
 
-$( window ).scroll(function() {
-  if($(".hidden-content").visible( true )){
-    $(".testimonials .jarallax div").css({"z-index": "rect(0px," + ($(window).width() - 80) + "px, 335vh, 0px)"});
-    $(".testimonials .jarallax div .jarallax-img").css({"height": "335vh !important"});
-  }
-  else {
-    $(".testimonials .jarallax div").css({"clip": "rect(0px," + ($(window).width() - 80) + "px, 240vh, 0px)"});
-    $(".testimonials .jarallax div .jarallax-img").css({"height": "240vh !important"});
-  }
-  if($(window).width() < 330){
-    $("div:regex(id, .*jarallax-container-.*)").css({"clip": "rect(0," + ($(window).width() - 40) + "px, 240vh, 0)"});
-    $(".jarallax-img").css({"height": "240vh !important"});
-    $(".testimonials .jarallax div .jarallax-img").css({"height": "335vh !important"});
-  }
-});
