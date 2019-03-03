@@ -62,6 +62,7 @@ function initialise() {
   }
   if($(window).width() < 700){
     $('.jarallax-img').addClass('edge-compatibility');
+    $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
   }
 }
 
