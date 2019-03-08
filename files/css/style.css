@@ -1101,6 +1101,8 @@ hr {
   }
   .title-savvy {
     left: auto;
+    word-spacing: 100vw;
+    margin: auto;
   }
   .anim4 {
     font-size: 43px;
@@ -1212,11 +1214,6 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     width: 150px;
     margin: 0;
     margin-bottom: 2px;
-  }
-  .title-main {
-    width: 460px;
-    left: 225px;
-    bottom: -80px;
   }
   .title-main p  {
     font-size: 22px;
@@ -1393,10 +1390,10 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .contact {
     margin-bottom: 0;
-    border-bottom: 30px solid white;
+    border-bottom: 40px solid white;
   }
   .samples {
-    border-bottom: 30px solid white;
+    border-bottom: 40px solid white;
   }
   .logo-board {
     max-width: 250px;
