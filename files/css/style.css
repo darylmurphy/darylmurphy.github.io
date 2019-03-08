@@ -1316,7 +1316,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .block {
     padding: 20px;
-    top: 36px;
+    top: 46px;
     margin-bottom: 20px;
     height: 90vh;
   }
@@ -1380,7 +1380,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   .contact, .testimonials, .about-savvy {
     border: 20px solid white;
     margin-top: 36px;
-    margin-bottom: -53px;
+    margin-bottom: -41px;
   }
   .description-center, .samples-center, .phoenix-center, 
   .savvy-center, .contact-center, .testimonials-center,
@@ -1393,9 +1393,10 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .contact {
     margin-bottom: 0;
+    border-bottom: 30px solid white;
   }
-  .savvy {
-    /*margin-bottom: 30px;*/
+  .samples {
+    border-bottom: 30px solid white;
   }
   .logo-board {
     max-width: 250px;
@@ -1456,7 +1457,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     margin-right: 0;
   }
   .description {
-    border-top: 36px solid white;
+    border-top: 34px solid white;
   }
 } 
 
