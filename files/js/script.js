@@ -45,7 +45,8 @@ function initialise() {
     speed: 0
   });
 
-  $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ($('.contact').height()) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;')
+  // Adjust height of jarallax contact image to fit screen properly without overflow
+  $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // console.log(testDivHeight);
   // Make Jarallax div the height of original
   if(is_edge_or_ie){

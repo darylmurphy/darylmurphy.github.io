@@ -818,6 +818,11 @@ hr {
 .contact-footer .general-link-margin {
   margin-bottom: 50px;
 }
+.contact-links {
+  z-index: 20;
+  overflow: hidden;
+  height: 100%;
+}
 .samples.no-margin .samples-center {
   padding-bottom: 30px;
 } 
@@ -986,7 +991,7 @@ hr {
   padding: 0px;
 }
 .navbar-toggle {
-  float: left;
+  float: right;
 }
 .navbar-default .navbar-toggle,
 .navbar-default-home .navbar-toggle {
@@ -1078,7 +1083,7 @@ hr {
 @media all and (max-width: 991px) {
   .navbar-toggle {
     top: 0px;
-    left: 23px;
+    right: 23px;
   }
   .title-block-main .jarallax .title-main h1 {
     font-size: 52px;
@@ -1215,10 +1220,6 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     left: 51%;
     display: block;
   }
-  .navbar-nav > li.mobileHide {
-    display: block;
-    border-bottom: 0px !important;
-  }
   .navbar-nav {
     margin: 0px -15px;
     height: 100vh;
@@ -1226,6 +1227,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     background: white;
     text-align: center;
     margin: 0;
+    padding-top: 5vh;
   }
   .navbar-nav hr {
     display: block;
@@ -1279,10 +1281,13 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     max-width: 310px;
   }
   .navbar-left {
-    right: 20px;
+    left: 48px;
   }
   .description-center, .samples-center, .phoenix-center, .savvy-center, .contact-center {
     padding: 10px 25px 2px 25px;
+  }
+  .phoenix-center {
+    padding: 10px 25px 20px 25px;
   }
   .loader-container {
     width: 250px;
@@ -1297,7 +1302,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
 @media all and (max-width: 479px) {
   .navbar-toggle {
     top: 0px;
-    left: 10px;
+    right: -5px;
   }
   .title-block-main .jarallax .title-main h1 {
     font-size: 52px;
@@ -1506,6 +1511,9 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   .samples.no-margin .samples-center .text-contain .songlist-link {
     text-align: center;
     font-size: 15px;
+  }
+  .navbar-left {
+    left: 10px;
   }
 } 
 
