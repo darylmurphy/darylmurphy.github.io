@@ -1500,8 +1500,8 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     margin-left: 0;
     margin-right: 0;
   }
-  .description {
-    border-top: 43px solid white;
+  .description, .testimonials {
+    border-top: 50px solid white;
   }
   .samples.no-margin .samples-center .text-contain .songlist-link {
     text-align: center;
