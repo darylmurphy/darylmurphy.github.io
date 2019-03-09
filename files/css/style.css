@@ -815,20 +815,27 @@ hr {
   padding: 40px 0 10px 0;
   /*font-weight: 600;*/
 }
-.contact-footer .calendar-link-margin {
+.contact-footer .general-link-margin {
   margin-bottom: 50px;
 }
-.calendar-link {
+.samples.no-margin .samples-center {
+  padding-bottom: 30px;
+} 
+.samples.no-margin .samples-center .text-contain .songlist-link {
+  text-align: center;
+  font-size: 20px;
+}
+.general-link {
   color: white;
   font-size: 20px;
   cursor: default;
   transition: all 0.3s ease;
 }
-.calendar-link:hover {
+.general-link:hover {
   text-decoration: none;
   color: #4286f4;
 }
-.calendar-link u {
+.general-link u {
   text-decoration: none;
   border-bottom: 1px solid #4286f4;
 }
@@ -1088,12 +1095,17 @@ hr {
   .jarallax {
     height: 140vh;
   }
-  .contact .jarallax,
   .samples .jarallax {
     height: 100vh;
   }
+  .contact .jarallax {
+    height: 89vh;
+  }
   .samples .jarallax {
     height: 155vh;
+  }
+  .samples.no-margin .jarallax {
+    height: 104vh;
   }
   .navbar-nav > li > a {
     font-size: 14px;
@@ -1116,6 +1128,7 @@ hr {
     left: auto;
     word-spacing: 100vw;
     margin: auto;
+    bottom: auto;
   }
   .anim, .anim2, .anim3, .anim4 {
     font-size: 28px;
@@ -1488,7 +1501,11 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     margin-right: 0;
   }
   .description {
-    border-top: 34px solid white;
+    border-top: 43px solid white;
+  }
+  .samples.no-margin .samples-center .text-contain .songlist-link {
+    text-align: center;
+    font-size: 15px;
   }
 } 
 
