@@ -1298,6 +1298,9 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   .samples-center {
     padding: 10px 25px 25px 25px;
   }
+  .samples.no-margin .jarallax {
+    height: 155vh;
+  }
 }
 @media all and (max-width: 479px) {
   .navbar-toggle {
