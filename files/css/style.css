@@ -368,12 +368,21 @@
     to   { opacity: 1; }
 }
 
-.arrow-down {
+.arrow-down, .arrow-down-main {
   display: none;
   position: absolute;
   left: 48.5%;
   z-index: 20;
   bottom: 30px;
+}
+.arrow-down {
+  animation: fadein 1s;
+}
+.arrow-down-main {
+  right: 25px;
+  bottom: 22px;
+  display: none;
+  left: auto;
   animation: fadein 1s;
 }
 .arrow-down img {
@@ -1083,6 +1092,9 @@ hr {
   .samples .jarallax {
     height: 100vh;
   }
+  .samples .jarallax {
+    height: 155vh;
+  }
   .navbar-nav > li > a {
     font-size: 14px;
   }
@@ -1097,15 +1109,29 @@ hr {
   }
   .title-main {
     top: auto;
-    left: 301px;
+    left: 268px;
+    bottom: -115px;
   }
   .title-savvy {
     left: auto;
     word-spacing: 100vw;
     margin: auto;
   }
+  .anim, .anim2, .anim3, .anim4 {
+    font-size: 28px;
+  }
   .anim4 {
-    font-size: 43px;
+    font-size: 38px;
+  }
+  .arrow-down img {
+    width: 30px;
+  }
+  .arrow-down-main {
+    right: 15px;
+    bottom: 14px;
+  }
+  .title-block-spacer {
+    background-position: 23%;
   }
   .navbar-right {
     right: 20px;
@@ -1221,6 +1247,11 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .title-main p.anim4 {
     font-size: 29px; 
+  }
+  .title-main {
+    top: auto;
+    left: 202px;
+    bottom: -80px;
   }
   .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, 
   .container>.navbar-collapse, .container>.navbar-header {
@@ -1434,6 +1465,9 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .arrow-down {
     left: 44%;
+  }
+  .arrow-down-main {
+    display: none !important;
   }
   .block-spacer-savvy {
     height: 80vh;

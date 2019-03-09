@@ -60,7 +60,7 @@ function initialise() {
     });
     // $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width() - 233) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden;');
   }
-  if($(window).width() < 700){
+  if($(window).width() < 992){
     $('.jarallax-img').addClass('edge-compatibility');
     $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
   }

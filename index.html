@@ -31,7 +31,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./files/css/pace.simple.css">
-	<link href="./files/css/style.css?v=3.6" rel="stylesheet">
+	<link href="./files/css/style.css?v=3.7" rel="stylesheet">
 </head>
 <body>
 	<div class="loading">
@@ -78,6 +78,11 @@
 				<p class="anim2">Intuitive.</p>
 				<p class="anim3">Entertaining.</p>
 				<p class="anim4">Daryl Murphy Entertainment.</p>
+			</div>
+			<div class="arrow-down arrow-down-main">
+				<a href="#about">
+					<img src="./files/img/arrow_down.png">
+				</a>
 			</div>
 			<div class="bg_overlay">
 			</div>
@@ -423,7 +428,7 @@
 		});
 		if($(window).width() < 991){
 			$('.block').css('height', ($(window).height() * 0.9) + 'px');
-			$('.title-block-spacer').css('height', ($(window).height() * 0.8) + 'px');
+			$('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
 		}
 		else {
 			$('.block').css('height', ($(window).height() * 1.0) + 'px');
@@ -435,6 +440,9 @@
 		  });
 		    // Only show main text banner after loading complete
 		  $('.title-main').css('display', 'block');
+		  setTimeout(function(){
+		  		$('.arrow-down').css('display', 'block');
+			}, 4500);
 		});
 		if($(window).width() < 700){
 		  // If pace does not work properly on mobile
