@@ -82,7 +82,7 @@ $(document).ready(function () {
     if(is_edge_or_ie){
       $(".hidden-content").is(':visible') ? $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (hiddenContentHeight + 690) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;') : $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;');
     }
-    $(this).next('.hidden-content').slideToggle(500);
+    $(this).next('.hidden-content').slideToggle(300);
   });
 });
 
