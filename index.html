@@ -446,6 +446,11 @@
 				$('.title-block-spacer').css('height', ($(window).height() * 0.88) + 'px');
 			}
 		}
+		paceOptions = {
+		  elements: {
+		    selectors: ['img']
+		  }
+		}
 		Pace.restart();
 		Pace.on("done", function(){
 		  $('.loading').fadeOut("slow", function() {

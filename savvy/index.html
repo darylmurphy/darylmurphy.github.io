@@ -27,7 +27,7 @@
 	<meta name="se" content="All Search Engines">
 	<meta name="author" content="Tim Jones">
 	<meta name="theme-color" content="#3700a5">
-	<link rel="icon" sizes="192x192" href="../files/img/favicon.ico">
+	<link rel="icon" sizes="192x192" href="../files/img/savvy.ico">
 	<title>Daryl Murphy - Brisbane Entertainer</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -408,6 +408,11 @@
 			else {
 				$('.block-spacer-savvy').css('height', ($(window).height() * 0.88) + 'px');
 			}
+		}
+		paceOptions = {
+		  elements: {
+		    selectors: ['img']
+		  }
 		}
 		Pace.restart();
 		Pace.on("done", function(){
