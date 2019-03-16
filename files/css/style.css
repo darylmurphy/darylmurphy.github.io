@@ -1286,7 +1286,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   .description-center, .samples-center, .phoenix-center, .savvy-center, .contact-center {
     padding: 10px 25px 2px 25px;
   }
-  .phoenix-center {
+  .savvy-center, .phoenix-center {
     padding: 10px 25px 20px 25px;
   }
   .loader-container {
