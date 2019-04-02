@@ -90,7 +90,7 @@ $(window).resize(function () {
     $('.jarallax').jarallax('destroy');
     $('.jarallax').jarallax({
         speed: 0
-    });    ;
+    });    
     if(is_edge_or_ie){
       location.reload();
     }
