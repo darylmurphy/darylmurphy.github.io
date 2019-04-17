@@ -44,7 +44,11 @@ function initialise() {
   $('.jarallax').jarallax({
     speed: 0
   });
-
+  if ($(this).scrollTop() > 20) {                 
+    $('.navbar-default').addClass('smaller');
+  } else {
+    $('.navbar-default').removeClass('smaller');
+  } 
   // Adjust height of jarallax contact image to fit screen properly without overflow
   $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // console.log(testDivHeight);
@@ -95,6 +99,16 @@ $(window).resize(function () {
       location.reload();
     }
     initialise();
+});
+
+$(window).scroll(function() {
+  //Detect browser and disable fixed backgrounds if on Safari or IE/Edge
+    if ($(this).scrollTop() > 20) {                 
+      $('.navbar-default').addClass('smaller');
+
+    } else {
+      $('.navbar-default').removeClass('smaller');
+    } 
 });
 
 function fadeOut() {
