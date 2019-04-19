@@ -1200,9 +1200,12 @@ hr {
     margin-right: 10px;
   }
   .title-block-spacer, .block-spacer, .block-spacer-savvy {
--webkit-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
--moz-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+    box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
+  }
+  .description-center h1, .samples-center h1, .phoenix-center h1, .savvy-center h1, .contact-center h1, .testimonials-center h1, .about-savvy-center h1, .insta-center h1 {
+    font-size: 35px;
   }
 }
 @media (max-width: 767px) {
@@ -1257,8 +1260,6 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
   .title-main {
     top: auto;
-    left: 202px;
-    bottom: -80px;
   }
   .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, 
   .container>.navbar-collapse, .container>.navbar-header {
@@ -1291,7 +1292,7 @@ box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     padding: 10px 25px 25px 25px;
   }
   .samples.no-margin .jarallax {
-    height: 155vh;
+    height: 145vh;
   }
 }
 @media all and (max-width: 479px) {
