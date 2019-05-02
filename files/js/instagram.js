@@ -53,22 +53,28 @@
 					
 					if(data.data[j].caption == null){var myCaption = '';} else{var myCaption = data.data[j].caption.text;}
 					if (data.data[j].comments.count < 2){var commentLabel = 'commentaire'} else {var commentLabel = 'commentaires'}
-					if (data.data[j].likes.count < 2){var likeLabel = 'like'} else {var likeLabel = 'likes'}
+					if(data.data[j].likes.count == null){var myCaption = '';} else{var likes = data.data[j].likes.count;}
 				  
-					$('.owl-carousel').append("<div class='item'><a target='_blank' href='" + data.data[j].link + "'><img src='" + data.data[j].images.standard_resolution.url + "' alt='" + myCaption + "'></a></div>"); 
+					$('.owl-carousel').append("<div class='item'><a class='animation-container' target='_blank' href='" + data.data[j].link + "'><img class='instagram-img' src='" + data.data[j].images.standard_resolution.url + "' alt='" + myCaption + "'></a><div class=\"insta-overlay\"><div class=\"img-info\"><div class='likes'><img src=\"./files/img/icons/heart.svg\" class=\"icon-sml\"/><p>" + likes + "</p></div><p>" + myCaption + "</p></div></div></div>"); 
 					j++;
 					$slideStatus = j;
 				}
 			  };
 				var sync1 = $("#sync1");
-				var slidesPerPage = 1; //globaly define number of elements per page
 				var syncedSecondary = true;
 				  sync1.owlCarousel({
-					navigation : true, // Show next and prev buttons
+					  navigation : false, // Show next and prev buttons
 				      slideSpeed : 300,
-				      paginationSpeed : 400,
+				      dots: false,
 				      singleItem: true,
-					navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+				      items: 4,
+				      autoplay: true,
+				      autoplayHoverPause: true,
+				      animateOut: 'fadeOut',
+				      autoplayTimeout: 2500,
+				      loop: true,
+			          autoWidth: true,
+					  navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
 				  }).on('changed.owl.carousel', syncPosition);
 			}
 			});		 

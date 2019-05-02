@@ -705,17 +705,72 @@ hr {
     box-sizing: inherit;
 }
 /*INSTAGRAM*/
-.owl-item .item img{
-    display: block;
-    width: 100%;
-    height: auto;
+
+#instafeed {
+  margin-bottom: 90px;
+  margin-top: 65px;
 }
+.owl-item .item img {
+  display: block;
+  position: relative;
+  width: auto;
+  height: 454px;
+  margin-top: -76px;
+}
+.owl-item {
+  overflow: hidden;
+}
+.item {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.img-info img.icon-sml {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 auto;
+}
+.animation-container {
+  overflow: hidden;
+  display: inline-block;
+}
+.instagram-img {
+  filter: sepia(30%);
+}
+.likes {
+  overflow: hidden;
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.likes p {
+  margin-left: 10px;
+}
+.insta-overlay {
+  position: absolute;
+  padding: 0px 25px 0px 25px;  
+  bottom: 100%;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.item:hover .insta-overlay {
+  opacity: 1
+}
+
 .img-info {
   color: white;
   font-size: 20px;
   position: absolute;
-  padding-right: 5px;
-  padding-top: 10px;
+  padding: 1px 20px 0px 20px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -726,8 +781,26 @@ hr {
 }
 .img-info p {
   display: inline-block;
-  width: 100%;
+  /*padding-top: 2px;*/
   font-size: 15px;
+  /*vertical-align: middle;*/
+}
+.img-info {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.img-info p {
+  display: inline-block;
+  font-size: 15px;
+  float: left;
 }
 
 .icon-sml {
@@ -1177,6 +1250,9 @@ hr {
   .description-center h1, .samples-center h1, .phoenix-center h1, .savvy-center h1, .contact-center h1, .testimonials-center h1, .about-savvy-center h1, .insta-center h1 {
     font-size: 35px;
   }
+  .description-center .header-text {
+    font-size: 25px;
+  }
 }
 @media (max-width: 767px) {
   .mobileHide .name-header {
@@ -1300,7 +1376,7 @@ hr {
     margin-bottom: 50px;
   }
   .jarallax {
-    height: 240vh;
+    height: 200vh;
   }
 /*  .testimonials .jarallax {
     height: 480vh;
@@ -1333,16 +1409,16 @@ hr {
   }
   .block {
     padding: 20px;
-    top: 46px;
-    margin-bottom: 20px;
+    margin-bottom: -46px;
     height: 90vh;
   }
   .title-block-spacer {
     height: 80vh;
+    margin-top: 36px;
     background-size: cover;
     background-position: 27%;
   }
-  .title-main {
+  .title-main.main-page {
     position: absolute;
     left: 10px;
     overflow: hidden;
@@ -1480,6 +1556,11 @@ hr {
   }
   .navbar-left {
     left: 10px;
+  }
+  .navbar-default .container .navbar-header .logo-img {
+    top: 80px;
+    left: 10px;
+    height: 80px !important;
   }
 } 
 
