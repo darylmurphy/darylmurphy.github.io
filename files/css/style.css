@@ -748,6 +748,7 @@ hr {
   width: 300px;
   overflow: hidden;
   position: relative;
+  transition: .3s ease;
 }
 .img-info img.icon-sml {
   width: 20px;
@@ -787,6 +788,10 @@ hr {
 
 .item:hover .insta-overlay {
   opacity: 1
+}
+
+.item:hover {
+  transform: scale(1.04, 1.04);
 }
 
 .img-info {
