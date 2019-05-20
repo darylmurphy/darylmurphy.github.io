@@ -68,7 +68,7 @@
 				      dots: false,
 				      singleItem: true,
 				      items: 4,
-				      autoplay: true,
+				      autoplay: false,
 				      autoplayHoverPause: true,
 				      animateOut: 'fadeOut',
 				      autoplayTimeout: 2500,

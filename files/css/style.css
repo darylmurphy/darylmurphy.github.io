@@ -247,6 +247,7 @@
   position: relative;
   z-index: 16;
   width: 100%;
+  overflow: hidden;
   top: 20px;
   background-size: cover;
   width: 100%;
@@ -264,6 +265,28 @@
 }
 .about-savvy .jarallax .block-spacer {
   background: rgba(2, 0, 35, 0.7);
+}
+/*Add pattern overlay to video for better text readability and to hide video flaws*/
+.video_contain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 17, 30, 0.36);
+  background-image: url(../img/pattern2.png);
+  z-index: 5;
+}
+
+/* Pull video under overlay */
+.video {
+  height: 100% !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1 !important;
+  position: relative !important;
+  object-fit: cover;
+  background-image: url(../img/cover_bg.jpg);
+  position: absolute !important;
 }
 .title-main {
   transition: all 0.4s ease;
@@ -533,7 +556,7 @@
   padding: 10px 0px 2px 0px;
 }
 .phoenix-center, .savvy-center {
-  background: rgba(0,0,0,0.7);
+  background: rgba(4, 4, 44, 0.62);
   padding-bottom: 30px;
 }
 .description-center h1,
@@ -942,7 +965,7 @@ hr {
   top: 0px;
   left: 0px;
   height: 70px !important;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 .navbar-default .container .navbar-header .logo-img {
   top: 90px;
@@ -1133,13 +1156,13 @@ hr {
     right: 30px;
   }
   .jarallax {
-    height: 140vh;
-  }
-  .samples .jarallax {
-    height: 100vh;
+    height: 135vh;
   }
   .contact .jarallax {
     height: 89vh;
+  }
+  .agency-jarallax .jarallax {
+    height: 75vh;
   }
   .samples .jarallax {
     height: 155vh;
@@ -1253,6 +1276,25 @@ hr {
   .description-center .header-text {
     font-size: 25px;
   }
+  .agency-jarallax {
+    border-bottom: 86px solid white;
+  }
+  .agency-jarallax .jarallax {
+    height: 55vh;
+  }
+  .item {
+    height: 200px;
+    width: 200px;
+  }
+  .img-info p {
+    font-size: 12px;
+  }
+  .likes {
+    margin-bottom: 10px;
+  }
+  .navbar-default .container .navbar-header .logo-img {
+    z-index: -1;
+  }
 }
 @media (max-width: 767px) {
   .mobileHide .name-header {
@@ -1292,8 +1334,6 @@ hr {
     padding-right: 10px;
   }
   .animation-container {
-    height: 150px;
-    width: 150px;
     margin: 0;
     margin-bottom: 2px;
   }
@@ -1561,6 +1601,22 @@ hr {
     top: 80px;
     left: 10px;
     height: 80px !important;
+  }
+  .item {
+    height: 170px;
+    width: 170px;
+  }
+  .img-info p {
+    font-size: 11px;
+  }
+  .likes {
+    margin-bottom: 5px;
+  }
+  .agency-jarallax .jarallax {
+    height: 70vh;
+  }
+  .agency-jarallax {
+    border-bottom: 86px solid white;
   }
 } 
 

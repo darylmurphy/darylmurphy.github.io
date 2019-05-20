@@ -37,13 +37,13 @@
 	<link href="./files/css/style.css?v=4.6" rel="stylesheet">
 </head>
 <body>
-	<div class="loading">
+<!-- 	<div class="loading">
 	    <div class="loader-container">
 	    	<img src="./files/img/logos/band/savvy.png" class="ld ld-wander first" alt="Savvy Music Logo">
 	    	<img src="./files/img/logos/band/phoenix.png" class="ld ld-wander second" alt="Phoenix Music Logo">
 	    	<img src="./files/img/logos/band/platinum.png" class="ld ld-wander third" alt="Platinum Music Logo">
 		</div>
-	</div>
+	</div> -->
 	<div class="hidden-home" id="home">
 	</div>	
 	<nav id="topnav" class="navbar navbar-default">
@@ -89,8 +89,12 @@
 					<img src="./files/img/arrow_down.png" alt="Arrow Down">
 				</a>
 			</div>
-			<div class="bg_overlay">
+			<div class="video_contain">
 			</div>
+			<video class="video" id="banner" muted loop="loop" autoplay playsinline poster="./files/img/cover_bg.jpg">
+			    <source src="./files/img/banner.webm" type="video/webm">
+			    <source src="./files/img/banner.mp4" type="video/mp4">
+			</video>	
 		</div>
 		<div class="invisible-div" id="about">
 		</div>
@@ -103,19 +107,23 @@
  		<div class="description-center block-spacer">
 	 		<div class="text-contain">
 	 			<h1>About</h1>
+	 			<h2>Daryl Murphy needs no introduction.</h2>
 				<p>
-					Daryl Murphy is a successful singer/songwriter and without doubt one of Australia's most heard vocalists, lending his vocal talent to over 1500 television and radio jingles.
+					Daryl Murphy is without doubt one of Australia's most heard vocalists, lending his vocal talent to over 2000 television and radio jingles.
 				</p>
 				<p>
-					At home or on the international stage, Daryl has performed at hundreds of major corporate events.  He also recorded the theme song for the hit BBC series Misery Guts, and his original songs can be heard on the US TV series The New Adventures of Flipper.<br>
+					His stylistic versatility, incredible vocal range and zest for being on stage are world renowned.<br>
+				</p>
+				<p>
+					At home or on the international stage, Daryl has performed at hundreds of major corporate events. He also recorded the theme song for the hit BBC series Misery Guts, and his original songs can be heard on the US TV series The New Adventures of Flipper. Daryl's performance credits include working with Keith Urban and Powderfinger.
+				</p>
+				<p>
+					The "Brisbane Cabaret Festival" has also provided a platform to showcase Daryl's creative talents where one of the many successful performances took place in the world famous "Speigeltent".
+				</p>
+				<p>
+					On the local front, he heads up the successful corporate functions band Savvy, and the equally engaging duo/trio, Phoenix. Both outfits combine the incredible talents of guitarist Toby Loveland, with Daryl's energy and immense four octave range.
 				</p>
 	 			<h2 class="header-text">Unless you've been marooned on a desert island you would've heard Daryl's voice. Don't miss the opportunity to see this talented performer in action!</h2>
-				<p>
-					On the local front, he heads up the successful corporate functions band Savvy, and the equally engaging duo/trio, Phoenix.  Both outfits combine the incredible talents of guitarist Toby Loveland, with Daryl's energy and immense four octave range.<br>
-				</p>
-				<p>
-					The "Brisbane Cabaret Festival" has also provided a platform to showcase Daryl's creative talents where one of the many successful performances took place in the world famous "Speigeltent".<br>
-				</p>
 				<h2 class="client-header">Here are just some of his past clients:</h2>
 				<img class="logo-board" src="./files/img/logos/logo_board.png">
 			</div>
@@ -166,7 +174,7 @@
 	</div>
 	<div class="savvy">
 		<div class="jarallax">
-	    	<img class="jarallax-img" src="./files/img/savvy2.jpg" alt="">
+	    	<img class="jarallax-img" src="./files/img/cover_bg.jpg" alt="">
 		</div>
 		<div class="savvy-center block-spacer">
 			<h1>Savvy</h1>
@@ -238,6 +246,9 @@
 		<div class="samples-center block-spacer">
 			<h1>Jingles</h1>
 	 		<div class="text-contain">
+	 			<h2>
+					Daryl Murphy is without doubt one of Australia's most heard vocalists, lending his vocal talent to over 2000 television and radio jingles.
+				</h2>
 				<div class="samples-left">
 					<p>Seaworld</p>
 					<iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/575656992&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
@@ -251,6 +262,11 @@
 					<iframe width="100%" height="150" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/575657046&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 				</div>
 				<div class="samples-right">
+					<p>Loving You is Easy</p>
+					<iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/623527254&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+				</div>
+				<h2>Best Agency Produced Jingle</h2>
+				<div class="samples-single">
 					<p>Amazing Clean</p>
 					<iframe width="100%" height="150" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/575656968&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 				</div>
@@ -460,6 +476,10 @@
 				$('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
 			}
 		}
+		if($(window).width() < 767){
+			$('.item').css('width', ($(".insta").width()) + 'px');
+			$('.item').css('height', ($(".insta").width()) + 'px');
+		}
 		paceOptions = {
 		  elements: {
 		    selectors: ['img']
@@ -479,6 +499,7 @@
 		  // If pace does not work properly on mobile
 		  setTimeout(fadeOut, 3000);
 		}
+    	document.getElementById('banner').play(); 
 	</script>
 </body>
 </html>	
