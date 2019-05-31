@@ -51,6 +51,10 @@ function initialise() {
   } 
   // Adjust height of jarallax contact image to fit screen properly without overflow
   $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
+  $('.agency-jarallax .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
+  // if($(window).width() < 991) {
+  //   $('.insta .jarallax .div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ((this.outerHeight()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
+  // }
   // console.log(testDivHeight);
   // Make Jarallax div the height of original
   if(is_edge_or_ie){
@@ -66,7 +70,8 @@ function initialise() {
     // $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width() - 233) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden;');
   }
   if($(window).width() < 992){
-    $('.jarallax-img').addClass('edge-compatibility');
+    // $('.jarallax-img').addClass('edge-compatibility');
+    // $('.jarallax').addClass('fix-jarallax');
     $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
   }
 }
@@ -81,12 +86,6 @@ $(document).ready(function () {
     //   $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 380 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
     // }
     // else {
-    $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 680 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
-    // }
-    if(is_edge_or_ie){
-      $(".hidden-content").is(':visible') ? $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (hiddenContentHeight + 690) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;') : $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0;');
-    }
-    $(this).next('.hidden-content').slideToggle(300);
   });
   window.scrollTo(0, 0);
 });
