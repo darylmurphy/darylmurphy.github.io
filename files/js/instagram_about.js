@@ -63,19 +63,20 @@
 				var sync1 = $("#sync1");
 				var syncedSecondary = true;
 				  sync1.owlCarousel({
-					  navigation : false, // Show next and prev buttons
-				      slideSpeed : 300,
-				      dots: false,
-				      singleItem: true,
-				      items: 4,
-				      autoplay: true,
-				      autoplayHoverPause: true,
-				      animateOut: 'fadeOut',
-				      autoplayTimeout: 2500,
-				      loop: true,
-			          autoWidth: true,
-					  navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-				  }).on('changed.owl.carousel', syncPosition);
+				  navigation : false, // Show next and prev buttons
+			      slideSpeed : 300,
+			      dots: false,
+			      singleItem: true,
+			      items: 4,
+			      autoplay: true,
+			      autoplayHoverPause: true,
+			      animateOut: 'fadeOut',
+			      autoplayTimeout: 2500,
+			      loop: true,
+		          autoWidth: true,
+				  navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+			  	}).on('changed.owl.carousel', syncPosition);
+				$('.agency-jarallax .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.agency-jarallax').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
 			}
 			});		 
 		     
@@ -111,3 +112,5 @@
       current = 0;
     }
 }
+
+

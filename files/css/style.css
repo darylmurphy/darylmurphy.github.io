@@ -555,6 +555,12 @@
 .insta-center {
   padding: 10px 0px 2px 0px;
 }
+.insta-center .col-md-12 {
+  color: #e7e7e7;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
 .phoenix-center, .savvy-center {
   background: rgba(4, 4, 44, 0.62);
   padding-bottom: 30px;

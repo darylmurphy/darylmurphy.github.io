@@ -51,7 +51,6 @@ function initialise() {
   } 
   // Adjust height of jarallax contact image to fit screen properly without overflow
   $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
-  $('.agency-jarallax .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // if($(window).width() < 991) {
   //   $('.insta .jarallax .div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ((this.outerHeight()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // }
@@ -88,6 +87,8 @@ $(document).ready(function () {
     // else {
   });
   window.scrollTo(0, 0);
+  var theDate = new Date(); 
+  $(".year").text(theDate.getFullYear());
 });
 
 $(window).resize(function () {
