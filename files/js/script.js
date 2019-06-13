@@ -77,16 +77,15 @@ function initialise() {
 
 $(document).ready(function () {
   initialise();
-  $(".hidden-content").hide();
-  $(".show-hidden").on("click", function () {
-    var txt = $(".hidden-content").is(':visible') ? 'View more' : 'View less';
-    $(".show-hidden u").text(txt);
-    // if($(window).width() < 800){
-    //   $(".hidden-content").is(':visible') ? $('.testimonials .jarallax').css('height', hiddenContentHeight + 380 + 'px') : $('.testimonials .jarallax').css('height', testimonialsHeight + 'px');
-    // }
-    // else {
-  });
-  window.scrollTo(0, 0);
+
+  //Scroll to top of the page to show loading 
+  //animation upon reload if not at top already
+  var scrollTop = $(this).scrollTop();
+  $("html, body").animate({
+      scrollTop: 0
+  }, 0);
+
+  //Set year of copyright text to current year
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
 });
