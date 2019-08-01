@@ -1670,14 +1670,16 @@ hr {
   .agency-jarallax {
     border-bottom: 86px solid white;
   }
-  .insta .jarallax {
-    height: 75vh !important;
-  }
   .jarallax {
     height: 250vh !important;
   }
+  .insta .jarallax {
+    height: 75vh !important;
+  }
+  .contact .jarallax {
+    height: 130vh !important;
+  }
 } 
-
 @media all and (max-width: 330px) {
   .title-main p  {
     font-size: 17px;
