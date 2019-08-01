@@ -127,8 +127,12 @@ $(window).resize(function () {
         }
       }
       if($(window).width() < 767){
-        $('.item').css('width', ($(".insta").width()) + 'px');
-        $('.item').css('height', ($(".insta").width()) + 'px');
+        $('.item').css('width', ($(".insta").width()/2) + 'px');
+        $('.item').css('height', ($(".insta").width()/2) + 'px');
+      }
+      else {
+        $('.item').css('width', '300px');
+        $('.item').css('height', '300px');
       }
     }, 400);
 });
