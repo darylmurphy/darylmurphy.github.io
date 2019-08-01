@@ -37,13 +37,13 @@
 	<link href="../files/css/style.css?v=4.9" rel="stylesheet">
 </head>
 <body>
-	<div class="loading">
+<!-- 	<div class="loading">
 	    <div class="loader-container">
 	    	<img src="../files/img/logos/band/savvy.png" class="ld ld-wander first" alt="Savvy Music Logo">
 	    	<img src="../files/img/logos/band/phoenix.png" class="ld ld-wander second" alt="Phoenix Music Logo">
 	    	<img src="../files/img/logos/band/platinum.png" class="ld ld-wander third" alt="Platinum Music Logo">
 		</div>
-	</div>
+	</div> -->
 	<div class="hidden-home" id="home">
 	</div>	
 	<nav id="topnav" class="navbar navbar-default">
@@ -66,6 +66,8 @@
 					<li><a href="#phoenix">Phoenix</a></li>
 					<hr>
 					<li><a href="#savvy">Savvy</a></li>
+					<hr>
+					<li><a href="#platinum">Platinum</a></li>
 					<hr>
 					<li><a href="#samples">Jingles</a></li>
 					<hr>
@@ -234,9 +236,29 @@
 				<h1>"VERSATILE"</h1>
 			</div>
 		</div>
-		<div class="invisible-div" id="samples">
+		<div class="invisible-div" id="platinum">
 		</div>
 	</div>
+	<section class="platinum">
+		<div class="jarallax">
+	    	<img class="jarallax-img" src="../files/img/platinum.jpg" alt="">
+		</div>
+		<div class="platinum-center block-spacer">
+			<h1>Platinum</h1>
+	 		<div class="text-contain">
+				<div class="text-contain">
+					<p>
+						Our musical family has just expanded to include a DJ/live hybrid that is thoroughly modern, without ever losing sight of playing for the people.
+					</p>
+					<p>
+						With ex-Melbourne DJ extraordinaire Aaron Maybus at the helm, 'Platinum' are wowing audiences everywhere. Sometimes a DJ is all you need, and sometimes a DJ that plays with a handful of bright young musicians is WHAT you need! 
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="invisible-div" id="samples">
+		</div>
+	</section>
 	<div class="samples">
 		<div class="jarallax">
 	    	<img class="jarallax-img" src="../files/img/samples.jpg" alt="">
@@ -307,152 +329,5 @@
   	<script src="../files/js/instagram_about.js"></script>
   	<script src="../files/js/main.js"></script>
 	<script src="../files/js/script.js"></script>
-	<script>
-		var fadeInFirst = {
-		    delay: 100,
-			move: 0
-		}
-		var fadeInSecond = {
-		    delay: 400,
-			move: 0
-		}
-		var fadeInThird = {
-		    delay: 700,
-			move: 0
-		}
-		var fadeIn = {
-		    duration: 600,
-		    delay: 700,
-			move: 0
-		}
-		var slideInLeft = {
-		    distance: '300%',
-		    origin: 'left',
-		    opacity: 0,
-		    delay: 200,
-		    duration: 500,
-		    reset: false
-		};
-		var slideInRight = {
-		    distance: '300%',
-		    origin: 'right',
-		    opacity: 0,
-		    delay: 200,
-		    duration: 500,
-		    reset: false
-		};
-		var slideInBottomDelayed = {
-		    distance: '300%',
-		    origin: 'bottom',
-		    opacity: 0,
-		    delay: 300,
-		    duration: 500,
-		    reset: false
-		};
-		var slideInBottom = {
-		    distance: '300%',
-		    origin: 'bottom',
-		    opacity: 0,
-		    delay: 200,
-		    duration: 500,
-		    reset: false
-		};
-		var slideInBottomContactOne = {
-		    distance: '300%',
-		    origin: 'bottom',
-		    opacity: 0,
-		    delay: 200,
-		    duration: 500,
-		    reset: true
-		};
-		var slideInBottomContactTwo = {
-		    distance: '300%',
-		    origin: 'bottom',
-		    opacity: 0,
-		    delay: 400,
-		    duration: 500,
-		    reset: true
-		};
-		var slideInBottomContactThree = {
-		    distance: '300%',
-		    origin: 'bottom',
-		    opacity: 0,
-		    delay: 600,
-		    duration: 500,
-		    reset: true
-		};
-		function initialiseScrollReveal() {
-			ScrollReveal().reveal('.samples-left', slideInLeft);
-			ScrollReveal().reveal('.samples-right', slideInRight);
-			ScrollReveal().reveal('.samples-single', slideInBottom);
-			ScrollReveal().reveal('.logo-board', slideInBottomDelayed);
-			ScrollReveal().reveal('.slideInRight', slideInRight);
-			ScrollReveal().reveal('.slideInLeft', slideInLeft);
-			ScrollReveal().reveal('.animContactFirst', slideInBottomContactOne);
-			ScrollReveal().reveal('.animContactSecond', slideInBottomContactTwo);
-			ScrollReveal().reveal('.animContactThird', slideInBottomContactThree);
-			ScrollReveal().reveal('.fadeIn', fadeIn);
-			ScrollReveal().reveal('.first', fadeInFirst);
-			ScrollReveal().reveal('.second', fadeInSecond);
-			ScrollReveal().reveal('.third', fadeInThird);
-		}
-		function fadeOut() {
-		  $('.loading').fadeOut("slow", function() {
-		  });
-		  $('.title-main').css('display', 'block');
-		}
-		initialiseScrollReveal();
-		// If on desktop, allow rebuilding of ScrollReveal on resize event
-		$(window).resize(function () {
-			if($(window).width() > 991){
-    			ScrollReveal().destroy();
-				initialiseScrollReveal();
-				$('.block').css('height', ($(window).height() * 1.0) + 'px');
-				if($(window).height() < 750){
-					$('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
-				}
-				else {
-					$('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
-				}
-			}
-		});
-		if($(window).width() < 991){
-			$('.block').css('height', ($(window).height() * 0.95) + 'px');
-			$('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
-		}
-		else {
-			$('.block').css('height', ($(window).height() * 1.0) + 'px');
-			if($(window).height() < 750){
-				$('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
-			}
-			else {
-				$('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
-			}
-		}
-		if($(window).width() < 767){
-			$('.item').css('width', ($(".insta").width()) + 'px');
-			$('.item').css('height', ($(".insta").width()) + 'px');
-		}
-		paceOptions = {
-		  elements: {
-		    selectors: ['img']
-		  }
-		}
-		Pace.restart();
-		Pace.on("done", function(){
-		  $('.loading').fadeOut("slow", function() {
-		  });
-		    // Only show main text banner after loading complete
-		  $('.title-main').css('display', 'block');
-		  setTimeout(function(){
-		  		$('.arrow-down').css('display', 'block');
-			}, 4500);
-		});
-		if($(window).width() < 700){
-		  // If pace does not work properly on mobile
-		  setTimeout(fadeOut, 3000);
-		}
-    	document.getElementById('banner').play(); 
-	</script>
 </body>
 </html>	

@@ -230,7 +230,6 @@
       opacity: 1;
     }
 }
-
 .title-block-main {
   height: 100vh;
   position: relative;
@@ -524,7 +523,8 @@
 }
 
 .description, .samples, .phoenix, 
-.savvy, .contact, .testimonials, .about-savvy, .insta  {
+.savvy, .contact, .testimonials, 
+.platinum, .about-savvy, .insta  {
   height: 100%;
   /*background: #626060;*/
   border: 60px solid white;
@@ -542,7 +542,7 @@
 }
 .description-center, .samples-center, .phoenix-center, 
 .savvy-center, .contact-center, .testimonials-center,
-.about-savvy-center, .insta-center {
+.platinum-center, .about-savvy-center, .insta-center {
   overflow: hidden;
   padding: 10px 35px 2px 35px;
   z-index: 12;
@@ -555,13 +555,18 @@
 .insta-center {
   padding: 10px 0px 2px 0px;
 }
+.platinum-center {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: rgba(3, 0, 29, 0.69);
+}
 .insta-center .col-md-12 {
   color: #e7e7e7;
   text-align: center;
   margin-bottom: 10px;
   font-size: 15px;
 }
-.phoenix-center, .savvy-center {
+.savvy-center {
   background: rgba(4, 4, 44, 0.62);
   padding-bottom: 30px;
 }
@@ -570,6 +575,7 @@
 .phoenix-center h1,
 .savvy-center h1,
 .contact-center h1,
+.platinum-center h1,
 .testimonials-center h1,
 .about-savvy-center h1, 
 .insta-center h1 {
@@ -638,6 +644,7 @@ h2 {
 }
 .background-text,
 .background-text-right,
+.background-text-top-left,
 .background-text-left-middle,
 .background-text-right-bottom,
 .background-text-left-bottom {
@@ -648,6 +655,7 @@ h2 {
 }
 .background-text h1,
 .background-text-right h1,
+.background-text-top-left h1,
 .background-text-left-middle h1,
 .background-text-right-bottom h1,
 .background-text-left-bottom h1 {
@@ -661,6 +669,10 @@ h2 {
 .background-text-right {
   top: -10px;
   right: 10px;
+}
+.background-text-top-left {
+  left: 10px;
+  top: 0px;
 }
 .background-text-left-middle {
   left: 10px;
@@ -702,7 +714,6 @@ h2 {
 }
 .profile-img img {
   width: 70px;
-  border: 2px solid white; 
 }
 .name {
   font-style: normal; 
@@ -1284,7 +1295,9 @@ hr {
     -moz-box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
     box-shadow: -1px -2px 43px 3px rgba(0,0,0,0.75);
   }
-  .description-center h1, .samples-center h1, .phoenix-center h1, .savvy-center h1, .contact-center h1, .testimonials-center h1, .about-savvy-center h1, .insta-center h1 {
+  .description-center h1, .samples-center h1, .phoenix-center h1, 
+  .savvy-center h1, .contact-center h1, .platinum-center h1,
+  .testimonials-center h1, .about-savvy-center h1, .insta-center h1 {
     font-size: 35px;
   }
   .description-center .header-text {
@@ -1310,7 +1323,7 @@ hr {
     z-index: -1;
   }
   .insta .jarallax {
-    height: 100vh;
+    height: 50vh;
   }
 }
 @media (max-width: 767px) {
@@ -1384,7 +1397,7 @@ hr {
   .navbar-left {
     left: 48px;
   }
-  .description-center, .samples-center, .phoenix-center, .savvy-center, .contact-center {
+  .description-center, .samples-center, .phoenix-center, .platinum-center .savvy-center, .contact-center {
     padding: 10px 25px 2px 25px;
   }
   .savvy-center, .phoenix-center {
@@ -1523,14 +1536,14 @@ hr {
     top: 0;
   }
   .description, .samples, .phoenix, .savvy, 
-  .contact, .testimonials, .about-savvy, .insta {
+  .contact, .testimonials, .platinum, .about-savvy, .insta {
     border: 20px solid white;
     margin-top: 36px;
     margin-bottom: -41px;
   }
   .description-center, .samples-center, .phoenix-center, 
-  .savvy-center, .contact-center, .testimonials-center,
-  .about-savvy-center, .insta-center {
+  .savvy-center, .contact-center, .platinum-center, 
+  .testimonials-center, .about-savvy-center, .insta-center {
     font-size: 15px;
   }
   .samples, .phoenix, .savvy, 
