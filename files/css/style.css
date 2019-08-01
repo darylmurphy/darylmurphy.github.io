@@ -254,6 +254,7 @@
   -webkit-box-shadow: -1px 3px 35px 8px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px 3px 35px 8px rgba(0,0,0,0.75);
   box-shadow: -1px 3px 35px 8px rgba(0,0,0,0.75);
+  transition: all 0.8s ease;
 }
 .block-spacer {
   top: 0;
@@ -1415,6 +1416,20 @@ hr {
   .samples.no-margin .jarallax {
     height: 145vh;
   } 
+  .jarallax {
+    height: 390vh !important;
+  }
+  .contact .jarallax {
+    height: 230vh !important;
+  }
+  .insta .jarallax {
+    height: 230vh !important;
+  }
+  .navbar-default .container .navbar-header .logo-img {
+    top: 85px;
+    left: 12px;
+    height: 70px !important;
+  }
 }
 @media all and (max-width: 479px) {
   .navbar-toggle {

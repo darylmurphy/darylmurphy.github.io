@@ -102,23 +102,35 @@ function fadeOut() {
 initialiseScrollReveal();
 // If on desktop, allow rebuilding of ScrollReveal on resize event
 $(window).resize(function () {
-  if($(window).width() > 991){
     ScrollReveal().destroy();
     setTimeout(function(){
       initialiseScrollReveal();
-      $('.block').css('height', '100vh');
-      if($(window).height() < 750){
-        $('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
-      }
-      else {
-        $('.title-block-spacer').css('height', ($(window).height() * 0.835) + 'px');
-      }
       if($(window).width() < 991){
         $('.block').css('height', ($(window).innerHeight()) + 'px');
-        $('.title-block-spacer').css('height', $(".block").innerHeight() + 'px');
+        $('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
+      }
+      if($(window).width() > 1900){
+        $('.block').css('height', ($(window).height() - 20) + 'px');
+        $('.title-block-spacer').css('height', ($(window).height() * 0.85) + 'px');
+      }
+      if($(window).width() < 767 && $(window).width() > 479){
+        $('.block').css('height', ($(window).innerHeight()) + 'px');
+        $('.title-block-spacer').css('height', ($(window).height() * 0.7) + 'px');
+      }
+      else {
+        $('.block').css('height', '100vh');
+        if($(window).height() < 750){
+          $('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
+        }
+        else {
+          $('.title-block-spacer').css('height', ($(window).height() * 0.835) + 'px');
+        }
+      }
+      if($(window).width() < 767){
+        $('.item').css('width', ($(".insta").width()) + 'px');
+        $('.item').css('height', ($(".insta").width()) + 'px');
       }
     }, 400);
-  }
 });
 if($(window).width() < 991){
   $('.block').css('height', ($(window).innerHeight()) + 'px');
@@ -127,6 +139,10 @@ if($(window).width() < 991){
 if($(window).width() > 1900){
   $('.block').css('height', ($(window).height() - 20) + 'px');
   $('.title-block-spacer').css('height', ($(window).height() * 0.85) + 'px');
+}
+if($(window).width() < 767 && $(window).width() > 479){
+  $('.block').css('height', ($(window).innerHeight()) + 'px');
+  $('.title-block-spacer').css('height', ($(window).height() * 0.7) + 'px');
 }
 else {
   $('.block').css('height', '100vh');
