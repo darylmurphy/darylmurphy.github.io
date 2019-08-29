@@ -1320,8 +1320,17 @@ hr {
     margin-bottom: 10px;
     border-top: 1px solid #4286f4;
   }
+  .navbar-nav {
+    padding-top: 60px;
+  }
   .navbar-nav li {
-    width: 100%;
+    width: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #4286f4;
+    margin-bottom: 20px;
   }
   .navbar-default.smaller .navbar-nav .active {
     border-bottom: none;
@@ -1331,7 +1340,7 @@ hr {
     padding-left: 0px; 
   }
   .navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
-    line-height: 65px;
+    line-height: 3px;
     padding-right: 10px;
   }
   .animation-container {
@@ -1339,18 +1348,19 @@ hr {
     margin-bottom: 2px;
   }
   .title-main p  {
-    font-size: 22px;
+    font-size: 15px;
     margin-bottom: 4px;
   }
   .title-main p.anim4 {
-    font-size: 29px; 
+    font-size: 27px;
+    margin-top: 10px !important;
   }
   .title-main {
     top: auto;
   }
   .title-main.main-page {
-    left: 202px;
-    bottom: -80px;
+    left: 190px;
+    bottom: -60px;
     top: auto;
   }
   .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, 
@@ -1391,8 +1401,31 @@ hr {
   .agency-jarallax {
     border-bottom: 50px solid white;
   }
+  .contact {
+    margin-bottom: 0;
+    border-bottom: 50px solid white !important;
+  }
+  hr {
+    display: none !important;
+  }
 }
 @media all and (max-width: 479px) {
+  .navbar-nav hr {
+    display: block !important;
+    width: 33px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #4286f4;
+    margin: 0 auto !important;
+  }
+  .navbar-nav li {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: none;
+  }
+  .navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li > a {
+    transition: none;
+  }
   .navbar-toggle {
     top: 0px;
     right: -5px;
@@ -1512,10 +1545,6 @@ hr {
   .samples, .phoenix, .savvy, 
   .contact, .testimonials, .about-savvy, .insta {
     border-top: 40px solid white;
-  }
-  .contact {
-    margin-bottom: 0;
-    border-bottom: 40px solid white;
   }
   .samples {
     border-bottom: 40px solid white;
