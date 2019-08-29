@@ -6,6 +6,9 @@ var ua = window.navigator.userAgent;
 var trident = ua.indexOf('Trident/');
 var edge = ua.indexOf('Edge/');
 
+var widthOld;
+var widthNew;
+
 var fadeInFirst = {
   delay: 100,
   move: 0
@@ -61,7 +64,10 @@ var slideInBottomContactOne = {
     opacity: 0,
     delay: 200,
     duration: 500,
-    reset: true
+    reset: false,
+    viewOffset: {
+        top: 200
+    }
 };
 var slideInBottomContactTwo = {
     distance: '300%',
@@ -69,7 +75,10 @@ var slideInBottomContactTwo = {
     opacity: 0,
     delay: 400,
     duration: 500,
-    reset: true
+    reset: false,
+    viewOffset: {
+        top: 200
+    }
 };
 var slideInBottomContactThree = {
     distance: '300%',
@@ -77,7 +86,10 @@ var slideInBottomContactThree = {
     opacity: 0,
     delay: 600,
     duration: 500,
-    reset: true
+    reset: false,
+    viewOffset: {
+        top: 200
+    }
 };
 function initialiseScrollReveal() {
   ScrollReveal().reveal('.samples-left', slideInLeft);
@@ -102,30 +114,14 @@ function fadeOut() {
 initialiseScrollReveal();
 // If on desktop, allow rebuilding of ScrollReveal on resize event
 $(window).resize(function () {
-    ScrollReveal().destroy();
-    setTimeout(function(){
+    widthNew = $(window).width();
+    //Only destroy ScrollReveal if the window width changes
+    //Useful for mobiles as viewport width changes on scroll often
+    if(widthNew != widthOld){
+      ScrollReveal().destroy();
       initialiseScrollReveal();
-      if($(window).width() < 991){
-        $('.block').css('height', ($(window).innerHeight()) + 'px');
-        $('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
-      }
-      if($(window).width() > 1900){
-        $('.block').css('height', ($(window).height() - 20) + 'px');
-        $('.title-block-spacer').css('height', ($(window).height() * 0.85) + 'px');
-      }
-      if($(window).width() < 767 && $(window).width() > 479){
-        $('.block').css('height', ($(window).innerHeight()) + 'px');
-        $('.title-block-spacer').css('height', ($(window).height() * 0.7) + 'px');
-      }
-      else {
-        $('.block').css('height', '100vh');
-        if($(window).height() < 750){
-          $('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
-        }
-        else {
-          $('.title-block-spacer').css('height', ($(window).height() * 0.835) + 'px');
-        }
-      }
+    }
+    setTimeout(function(){
       if($(window).width() < 767){
         $('.item').css('width', ($(".insta").width()/2) + 'px');
         $('.item').css('height', ($(".insta").width()/2) + 'px');
@@ -136,27 +132,6 @@ $(window).resize(function () {
       }
     }, 400);
 });
-if($(window).width() < 991){
-  $('.block').css('height', ($(window).innerHeight()) + 'px');
-  $('.title-block-spacer').css('height', ($(window).height() * 0.78) + 'px');
-}
-if($(window).width() > 1900){
-  $('.block').css('height', ($(window).height() - 20) + 'px');
-  $('.title-block-spacer').css('height', ($(window).height() * 0.85) + 'px');
-}
-if($(window).width() < 767 && $(window).width() > 479){
-  $('.block').css('height', ($(window).innerHeight()) + 'px');
-  $('.title-block-spacer').css('height', ($(window).height() * 0.7) + 'px');
-}
-else {
-  $('.block').css('height', '100vh');
-  if($(window).height() < 750){
-    $('.title-block-spacer').css('height', ($(window).height() * 0.82) + 'px');
-  }
-  else {
-    $('.title-block-spacer').css('height', ($(window).height() * 0.835) + 'px');
-  }
-}
 if($(window).width() < 767){
   $('.item').css('width', ($(".insta").width()) + 'px');
   $('.item').css('height', ($(".insta").width()) + 'px');
@@ -207,16 +182,22 @@ function initialise() {
   if ((is_chrome)&&(is_safari)) {
     is_safari=false;
   }
-  $('.jarallax').jarallax({
-    speed: 0
-  });
+  if($(window).width() < 991) {
+    $('.jarallax').jarallax({
+      speed: 1.5
+    });
+  }
+  else {
+    $('.jarallax').jarallax({
+      speed: 0
+    });
+  }
   if ($(this).scrollTop() > 20) {                 
     $('.navbar-default').addClass('smaller');
   } else {
     $('.navbar-default').removeClass('smaller');
   } 
   // Adjust height of jarallax contact image to fit screen properly without overflow
-  $('.contact .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + (($('.contact').height()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // if($(window).width() < 991) {
   //   $('.insta .jarallax .div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ((this.outerHeight()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
   // }
@@ -232,12 +213,37 @@ function initialise() {
       var currentScrollPosition = window.pageYOffset;
       window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
-    // $('.testimonials .jarallax div').attr('style', 'clip: rect(0px, ' + ($(window).width() - 233) + 'px, ' + testimonialsHeight + 'px, 0px) !important; overflow: hidden;');
   }
-  if($(window).width() < 992){
+  widthOld = $(window).width();
+  
+  setTimeout(function(){
+    if($(window).width() < 991) {
+      $('.jarallax').jarallax({
+        speed: 1.5
+      });
+    }
+    else {
+      $('.jarallax').jarallax({
+        speed: 0
+      });
+    }   
+    $('#instafeed').css("height", $(".item").height() + "px");
+    //Dynamically create Jarallax to height of parent container
+    setTimeout(function(){
+      $(".jarallax").each(function() {
+        $(this).css("height", $(this).parent().outerHeight() + "px");
+      });
+    }, 400);
+  }, 200);
+  if($(window).width() < 991){
     // $('.jarallax-img').addClass('edge-compatibility');
     // $('.jarallax').addClass('fix-jarallax');
-    $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
+    // $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
+    $(".jarallax-img").css("margin-top", "-100px");
+    $(".jarallax-img").css("object-position", "70% 50%");
+  }
+  else {
+    $(".jarallax-img").css("margin-top", "0px");
   }
 }
 
@@ -273,12 +279,7 @@ $(document).ready(function () {
 
 $(window).resize(function () {
   $('.jarallax').jarallax('destroy');
-  setTimeout(function(){
-    $('.jarallax').jarallax({
-        speed: 0
-    });    
-    $('#instafeed').css("height", $(".item").height() + "px");
-  }, 200);
+  
   if(is_edge_or_ie){
     location.reload();
   }
