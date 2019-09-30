@@ -753,9 +753,8 @@ hr {
 .owl-item .item img {
   display: block;
   position: relative;
+  height: 170px;
   width: auto;
-  height: 454px;
-  margin-top: -76px;
 }
 .owl-item {
   overflow: hidden;

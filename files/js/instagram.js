@@ -4,8 +4,8 @@
     var pluginName = 'instastream',
         document = window.document,
         defaults = {
-            instaUser: '1427392611',
-            instaResults: 16,
+            instaUser: '4090409456',
+            instaResults: 12,
             instaMenu: 'false'
         };
     
@@ -54,7 +54,6 @@
 					if(data.data[j].caption == null){var myCaption = '';} else{var myCaption = data.data[j].caption.text;}
 					if (data.data[j].comments.count < 2){var commentLabel = 'commentaire'} else {var commentLabel = 'commentaires'}
 					if(data.data[j].likes.count == null){var myCaption = '';} else{var likes = data.data[j].likes.count;}
-				  
 					$('.owl-carousel').append("<div class='item'><a class='animation-container' target='_blank' href='" + data.data[j].link + "'><img class='instagram-img' src='" + data.data[j].images.standard_resolution.url + "' alt='" + myCaption + "'></a><div class=\"insta-overlay\"><div class=\"img-info\"><div class='likes'><img src=\"./files/img/icons/heart.svg\" class=\"icon-sml\"/><p>" + likes + "</p></div><p>" + myCaption + "</p></div></div></div>"); 
 					j++;
 					$slideStatus = j;
@@ -62,20 +61,31 @@
 			  };
 				var sync1 = $("#sync1");
 				var syncedSecondary = true;
-				  sync1.owlCarousel({
-					  navigation : false, // Show next and prev buttons
-				      slideSpeed : 300,
-				      dots: false,
-				      singleItem: true,
-				      items: 4,
-				      autoplay: true,
-				      autoplayHoverPause: true,
-				      animateOut: 'fadeOut',
-				      autoplayTimeout: 2500,
-				      loop: true,
-			          autoWidth: true,
-					  navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>','<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-				  }).on('changed.owl.carousel', syncPosition);
+					sync1.owlCarousel({
+						navigation : false, // Show next and prev buttons
+						dots: false,
+						autoplaySpeed: 800,
+						singleItem: true,
+						items: 3,
+						autoplay: false,
+						autoplayHoverPause: true,
+						animateOut: 'fadeOut',
+						autoplayTimeout: 3000,
+						loop: true,
+						// rewind: true,
+						responsiveRefreshRate: 500,
+						autoWidth: true,
+					}).on('changed.owl.carousel', syncPosition);
+
+				  	$('.owl-carousel').on('touchstart',function(){
+				  		console.log("swiped");
+						var carousel = sync1.data('owl.carousel');
+						carousel.settings.autoplayTimeout = 50000;
+						carousel.options.autoplayTimeout = 50000;
+						carousel.settings.autoplay = false;
+						carousel.options.autoplay = false;
+						sync1.trigger('refresh.owl.carousel');
+					});
 			}
 			});		 
 		     
@@ -100,7 +110,7 @@
     };
 }(jQuery, window));
  
- function syncPosition(el) {
+function syncPosition(el) {
     var count = el.item.count-1;
     var current = Math.round(el.item.index - (el.item.count/2) - .5);
     

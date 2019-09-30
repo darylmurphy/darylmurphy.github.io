@@ -92,19 +92,19 @@ var slideInBottomContactThree = {
     }
 };
 function initialiseScrollReveal() {
-  ScrollReveal().reveal('.samples-left', slideInLeft);
-  ScrollReveal().reveal('.samples-right', slideInRight);
-  ScrollReveal().reveal('.samples-single', slideInBottom);
-  ScrollReveal().reveal('.logo-board', slideInBottomDelayed);
-  ScrollReveal().reveal('.slideInRight', slideInRight);
-  ScrollReveal().reveal('.slideInLeft', slideInLeft);
-  ScrollReveal().reveal('.animContactFirst', slideInBottomContactOne);
-  ScrollReveal().reveal('.animContactSecond', slideInBottomContactTwo);
-  ScrollReveal().reveal('.animContactThird', slideInBottomContactThree);
-  ScrollReveal().reveal('.fadeIn', fadeIn);
-  ScrollReveal().reveal('.first', fadeInFirst);
-  ScrollReveal().reveal('.second', fadeInSecond);
-  ScrollReveal().reveal('.third', fadeInThird);
+  ScrollReveal().reveal('.samples-left', { mobile: false }, slideInLeft);
+  ScrollReveal().reveal('.samples-right', { mobile: false }, slideInRight);
+  ScrollReveal().reveal('.samples-single', { mobile: false }, slideInBottom);
+  ScrollReveal().reveal('.logo-board', { mobile: false }, slideInBottomDelayed);
+  ScrollReveal().reveal('.slideInRight', { mobile: false }, slideInRight);
+  ScrollReveal().reveal('.slideInLeft', { mobile: false }, slideInLeft);
+  ScrollReveal().reveal('.animContactFirst', { mobile: false }, slideInBottomContactOne);
+  ScrollReveal().reveal('.animContactSecond', { mobile: false }, slideInBottomContactTwo);
+  ScrollReveal().reveal('.animContactThird', { mobile: false }, slideInBottomContactThree);
+  ScrollReveal().reveal('.fadeIn', { mobile: false }, fadeIn);
+  ScrollReveal().reveal('.first', { mobile: false }, fadeInFirst);
+  ScrollReveal().reveal('.second', { mobile: false }, fadeInSecond);
+  ScrollReveal().reveal('.third', { mobile: false }, fadeInThird);
 }
 function fadeOut() {
   $('.loading').fadeOut("slow", function() {
