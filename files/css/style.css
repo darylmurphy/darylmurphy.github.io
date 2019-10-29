@@ -753,8 +753,8 @@ hr {
 .owl-item .item img {
   display: block;
   position: relative;
-  height: 170px;
-  width: auto;
+  height: 300px;
+  min-width: 300px;
 }
 .owl-item {
   overflow: hidden;
@@ -769,6 +769,7 @@ hr {
 .img-info img.icon-sml {
   width: 20px;
   height: 20px;
+  min-width: 20px;
   float: left;
   margin: 0 auto;
 }
@@ -1414,6 +1415,10 @@ hr {
   }
   hr {
     display: none !important;
+  }
+  .owl-item .item img {
+    height: 180px;
+    min-width: 180px;
   }
 }
 @media all and (max-width: 479px) {

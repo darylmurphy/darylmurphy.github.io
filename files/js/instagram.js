@@ -67,7 +67,7 @@
 						autoplaySpeed: 800,
 						singleItem: true,
 						items: 3,
-						autoplay: false,
+						autoplay: true,
 						autoplayHoverPause: true,
 						animateOut: 'fadeOut',
 						autoplayTimeout: 3000,
