@@ -93,8 +93,7 @@
 }
 .loader-container img {
   width: 160px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  visibility: hidden;
 }
 .loader-container img.first {
   -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
@@ -836,8 +835,6 @@ hr {
 }
 .general-link {
   color: white;
-  font-size: 20px;
-  cursor: default;
   transition: all 0.3s ease;
 }
 .general-link:hover {
@@ -1233,6 +1230,10 @@ hr {
   }
   .nav>li>a {
     padding: 17px 10px;
+  }
+  .jarallax-img {
+    transform: translate3d(0px, 0px, 0px) !important;
+    height: 120% !important;
   }
 }
 @media (max-width: 767px) {

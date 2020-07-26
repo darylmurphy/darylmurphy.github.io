@@ -92,16 +92,19 @@ var slideInBottomContactThree = {
     }
 };
 function initialiseScrollReveal() {
-  ScrollReveal().reveal('.samples-left', { mobile: false }, slideInLeft);
-  ScrollReveal().reveal('.samples-right', { mobile: false }, slideInRight);
-  ScrollReveal().reveal('.samples-single', { mobile: false }, slideInBottom);
-  ScrollReveal().reveal('.logo-board', { mobile: false }, slideInBottomDelayed);
-  ScrollReveal().reveal('.slideInRight', { mobile: false }, slideInRight);
-  ScrollReveal().reveal('.slideInLeft', { mobile: false }, slideInLeft);
-  ScrollReveal().reveal('.animContactFirst', { mobile: false }, slideInBottomContactOne);
-  ScrollReveal().reveal('.animContactSecond', { mobile: false }, slideInBottomContactTwo);
-  ScrollReveal().reveal('.animContactThird', { mobile: false }, slideInBottomContactThree);
-  ScrollReveal().reveal('.fadeIn', { mobile: false }, fadeIn);
+  ScrollReveal().reveal('.samples-left', { mobile: true }, slideInLeft);
+  ScrollReveal().reveal('.samples-right', { mobile: true }, slideInRight);
+  ScrollReveal().reveal('.samples-single', { mobile: true }, slideInBottom);
+  ScrollReveal().reveal('.logo-board', { mobile: true }, slideInBottomDelayed);
+  ScrollReveal().reveal('.slideInRight', { mobile: true }, slideInRight);
+  ScrollReveal().reveal('.slideInLeft', { mobile: true }, slideInLeft);
+  ScrollReveal().reveal('.animContactFirst', { mobile: true }, slideInBottomContactOne);
+  ScrollReveal().reveal('.animContactSecond', { mobile: true }, slideInBottomContactTwo);
+  ScrollReveal().reveal('.animContactThird', { mobile: true }, slideInBottomContactThree);
+  ScrollReveal().reveal('.fadeIn', { mobile: true }, fadeIn);
+  ScrollReveal().reveal('.first', { mobile: true }, fadeInFirst);
+  ScrollReveal().reveal('.second', { mobile: true }, fadeInSecond);
+  ScrollReveal().reveal('.third', { mobile: true }, fadeInThird);
 }
 function fadeOut() {
   $('.loading').fadeOut("slow", function() {
@@ -247,13 +250,6 @@ function bindVelocity(){
 $(document).ready(function () {
   bindVelocity();
   initialise();
-  $('.first').css('opacity', '1');
-  setTimeout(function(){
-    $('.second').css('opacity', '1');
-  },300);
-  setTimeout(function(){
-    $('.third').css('opacity', '1');
-  },600);
   $.instagramFeed({
     'username': 'dazvox',
     'container': "#instafeed",
@@ -265,6 +261,13 @@ $(document).ready(function () {
     'display_biography':false,
     'styling': false
   });
+  // $('.first').css('opacity', '1');
+  // setTimeout(function(){
+  //   $('.second').css('opacity', '1');
+  // },300);
+  // setTimeout(function(){
+  //   $('.third').css('opacity', '1');
+  // },600);
   setTimeout(function(){
     createCarousel();
   },1500);
