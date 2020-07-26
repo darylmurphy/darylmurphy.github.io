@@ -93,21 +93,20 @@
 }
 .loader-container img {
   width: 160px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 .loader-container img.first {
-  visibility: hidden;
   -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
   animation: ld-wander-px-v 2s infinite ease-in-out;
 }
 .loader-container img.second {
-  visibility: hidden;
   -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
   animation: ld-wander-px-v 2s infinite ease-in-out;
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 .loader-container img.third {
-  visibility: hidden;
   -webkit-animation: ld-wander-px-v 2s infinite ease-in-out;
   animation: ld-wander-px-v 2s infinite ease-in-out;
   -webkit-animation-delay: 0.2s;

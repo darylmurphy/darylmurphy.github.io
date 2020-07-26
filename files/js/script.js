@@ -102,9 +102,6 @@ function initialiseScrollReveal() {
   ScrollReveal().reveal('.animContactSecond', { mobile: false }, slideInBottomContactTwo);
   ScrollReveal().reveal('.animContactThird', { mobile: false }, slideInBottomContactThree);
   ScrollReveal().reveal('.fadeIn', { mobile: false }, fadeIn);
-  ScrollReveal().reveal('.first', { mobile: false }, fadeInFirst);
-  ScrollReveal().reveal('.second', { mobile: false }, fadeInSecond);
-  ScrollReveal().reveal('.third', { mobile: false }, fadeInThird);
 }
 function fadeOut() {
   $('.loading').fadeOut("slow", function() {
@@ -250,6 +247,13 @@ function bindVelocity(){
 $(document).ready(function () {
   bindVelocity();
   initialise();
+  $('.first').css('opacity', '1');
+  setTimeout(function(){
+    $('.second').css('opacity', '1');
+  },300);
+  setTimeout(function(){
+    $('.third').css('opacity', '1');
+  },600);
   $.instagramFeed({
     'username': 'dazvox',
     'container': "#instafeed",
