@@ -182,27 +182,17 @@ function initialise() {
   if ((is_chrome)&&(is_safari)) {
     is_safari=false;
   }
-  if($(window).width() < 991) {
-    $('.jarallax').jarallax({
-      speed: 1.5
-    });
-  }
-  else {
-    $('.jarallax').jarallax({
-      speed: 0
-    });
-  }
+  $('.jarallax').jarallax({
+    speed: 0
+  });
+  jarallax(document.querySelectorAll('.jarallax'), {
+    disableParallax: /iPad|iPhone|iPod|Android/,
+  });
   if ($(this).scrollTop() > 20) {                 
     $('.navbar-default').addClass('smaller');
   } else {
     $('.navbar-default').removeClass('smaller');
   } 
-  // Adjust height of jarallax contact image to fit screen properly without overflow
-  // if($(window).width() < 991) {
-  //   $('.insta .jarallax .div').attr('style', 'clip: rect(0px, ' + ($(window).width()) + 'px, ' + ((this.outerHeight()) + 20 ) + 'px, 0px) !important; overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%;');
-  // }
-  // console.log(testDivHeight);
-  // Make Jarallax div the height of original
   if(is_edge_or_ie){
     $('body').on("mousewheel", function () {
       // remove default behavior
@@ -227,18 +217,14 @@ function initialise() {
         speed: 0
       });
     }   
-    $('#instafeed').css("height", $(".item").height() + "px");
     //Dynamically create Jarallax to height of parent container
     setTimeout(function(){
       $(".jarallax").each(function() {
-        $(this).css("height", $(this).parent().outerHeight() + "px");
+        $(this).css("height", $(this).parent().outerHeight() - 40 + "px");
       });
     }, 400);
   }, 200);
   if($(window).width() < 991){
-    // $('.jarallax-img').addClass('edge-compatibility');
-    // $('.jarallax').addClass('fix-jarallax');
-    // $('.testimonials .jarallax div .jarallax-img').css('object-position', '60% 50%');
     $(".jarallax-img").css("margin-top", "-100px");
     $(".jarallax-img").css("object-position", "70% 50%");
   }
@@ -264,14 +250,23 @@ function bindVelocity(){
 $(document).ready(function () {
   bindVelocity();
   initialise();
-
-  //Scroll to top of the page to show loading 
-  //animation upon reload if not at top already
-  var scrollTop = $(this).scrollTop();
-  $("html, body").animate({
-      scrollTop: 0
-  }, 0);
-
+  $.instagramFeed({
+    'username': 'dazvox',
+    'container': "#instafeed",
+    'items': 16,
+    'items_per_row': 4,
+    'tag':'aaronmaybus',
+    'margin': 0.5,
+    'display_profile':false,
+    'display_biography':false,
+    'styling': false
+  });
+  setTimeout(function(){
+    createCarousel();
+  },1500);
+  setTimeout(function(){
+    $('.insta .jarallax').css("height", $(".insta").height() + "px");
+  },1700);
   //Set year of copyright text to current year
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
@@ -305,3 +300,46 @@ var newUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9
 
 $(".ld-breath").attr("href", newUrl);
 
+function createCarousel() {
+  var sync1 = $("#sync1");
+  var syncedSecondary = true;
+  sync1.owlCarousel({
+      navigation : false, // Show next and prev buttons
+      dots: false,
+      autoplaySpeed: 800,
+      singleItem: true,
+      items: 3,
+      autoplay: true,
+      autoplayHoverPause: true,
+      animateOut: 'fadeOut',
+      autoplayTimeout: 3000,
+      loop: true,
+      // rewind: true,
+      responsiveRefreshRate: 500,
+      autoWidth: true,
+      debug: true
+  }).on('changed.owl.carousel', syncPosition);
+  $('.owl-carousel').on('touchstart',function(){
+      console.log("swiped");
+      var carousel = sync1.data('owl.carousel');
+      carousel.settings.autoplayTimeout = 50000;
+      carousel.options.autoplayTimeout = 50000;
+      carousel.settings.autoplay = false;
+      carousel.options.autoplay = false;
+      sync1.trigger('refresh.owl.carousel');
+  });
+  $('.owl-carousel').on('changed.owl.carousel', function(event) {
+      console.log(event);
+  })
+}
+function syncPosition(el) {
+    var count = el.item.count-1;
+    var current = Math.round(el.item.index - (el.item.count/2) - .5);
+    
+    if(current < 0) {
+      current = count;
+    }
+    if(current > count) {
+      current = 0;
+    }
+}
