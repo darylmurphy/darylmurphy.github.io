@@ -851,7 +851,6 @@ hr {
 /*-----------NAVBAR STYLES-------------*/
 /* Navbar */
 .navbar-default {
-  transition: background 0.3s ease; 
   background-color: transparent;
   margin-bottom: 0px;
   z-index: 99;
