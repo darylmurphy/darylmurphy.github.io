@@ -315,7 +315,7 @@ function createCarousel() {
       dots: false,
       autoplaySpeed: 800,
       singleItem: true,
-      items: 3,
+      items: 12,
       autoplay: true,
       autoplayHoverPause: true,
       animateOut: 'fadeOut',
