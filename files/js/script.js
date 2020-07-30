@@ -231,6 +231,11 @@ function initialise() {
   else {
     $(".jarallax-img").css("margin-top", "0px");
   }
+  setTimeout(function(){
+    if($(window).width() < 991){
+      $('.insta .jarallax').css("height", $(".insta").height() + "px");
+    }
+  },1700);
 }
 
 function bindVelocity(){
@@ -271,9 +276,6 @@ $(document).ready(function () {
   setTimeout(function(){
     createCarousel();
   },1500);
-  setTimeout(function(){
-    $('.insta .jarallax').css("height", $(".insta").height() + "px");
-  },1700);
   //Set year of copyright text to current year
   var theDate = new Date(); 
   $(".year").text(theDate.getFullYear());
