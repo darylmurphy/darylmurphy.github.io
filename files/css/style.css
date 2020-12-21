@@ -450,6 +450,7 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   /*padding: 60px 60px 0 60px;*/
+  box-sizing: border-box; 
 }
 .description {
   border-top-width: 39px;
@@ -669,7 +670,7 @@ hr {
     padding: 0;
     box-sizing: inherit;
 }
-/*INSTAGRAM*/
+/*-----------MEDIA STYLES-------------*/
 
 #instafeed {
   margin-bottom: 90px;
@@ -780,7 +781,33 @@ hr {
 .simply-scroll-list { margin:0; padding:0; overflow:hidden;}
 .simply-scroll-list li { float:left; width:150px; height:150px; margin:0; padding:0; list-style:none;}
 
+.album_container {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.album_container .album_image {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  border: 5px solid #fff;
+  margin-bottom: 20px;
+}
+.album_container .music_logo {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 5px;
+  border: 1px solid #fff;
+  transition: all 0.6s ease;
+  backface-visibility: hidden;
+}
+.album_container .music_logo:hover {
+  padding: 9px 15px 9px 15px;
+}
 
+/*------------------CONTACT STYLES---------------------*/
 .contact-footer a .col-md-4 {
   text-align: center;
   /*transition: all 0.4s ease !important;*/
