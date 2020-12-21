@@ -786,12 +786,20 @@ hr {
   margin: 0 auto;
   margin-bottom: 50px;
 }
-.album_container .album_image {
+.album_container .album_image_container {
   display: block;
+  overflow: hidden;
+  border: 5px solid #fff;
   width: 300px;
   margin: 0 auto;
-  border: 5px solid #fff;
   margin-bottom: 20px;
+}
+.album_container .album_image {
+  width: 300px;
+  transition: all 0.5s ease;
+}
+.album_container .album_image:hover {
+  transform: scale(1.1);
 }
 .album_container .music_logo {
   display: block;
@@ -800,7 +808,7 @@ hr {
   margin-top: 30px;
   padding: 5px;
   border: 1px solid #fff;
-  transition: all 0.6s ease;
+  transition: all 0.4s ease;
   backface-visibility: hidden;
 }
 .album_container .music_logo:hover {
@@ -1616,6 +1624,10 @@ hr {
   }
   .img-info {
     padding: 1px 10px 0px 10px;
+  }
+  .album_container .album_image {
+    display: block;
+    width: 240px;
   }
 } 
 @media all and (max-width: 330px) {
