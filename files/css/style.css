@@ -799,7 +799,7 @@ hr {
   transition: all 0.5s ease;
 }
 .album_container .album_image:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .album_container .music_logo {
   display: block;
@@ -812,7 +812,7 @@ hr {
   backface-visibility: hidden;
 }
 .album_container .music_logo:hover {
-  padding: 9px 15px 9px 15px;
+  transform: scale(1.05);
 }
 
 /*------------------CONTACT STYLES---------------------*/
